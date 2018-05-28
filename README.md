@@ -1,7 +1,7 @@
-Traktoren & Landmaschinen - Brettschneider
+Auto und Traktor - Bretschneider
 =======
 
-[![CakePHP](http://cakephp.org/img/cake-logo.png)](http://www.cakephp.org)
+[![CakePHP](https://cakephp.org/img/cake-logo.png)](http://www.cakephp.org)
 
 A WooCommerce Online Shop build on Wordpress
 
