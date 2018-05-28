@@ -1,0 +1,164 @@
+/*
+ Theme Name: VendiPro Child
+ Theme URI: http://vendidero.de
+ Description: VendiPro Child Theme
+ Author: Axel Nitzschner
+ Author URI: http://vendidero.de
+ Template: vendipro
+ wc_gzd_compatible: true
+ Version: 1.0.0
+*/
+
+/* =Theme customization starts here
+-------------------------------------------------------------- */
+.aws-search-form input.aws-search-field {
+	height: 50px;
+	background: #565656;
+	border: none;
+	font-size: 10pt;
+	color: #ccc !important;
+	padding-left: 45px !important;
+	-webkit-border-radius: 5px !important;
+	-moz-border-radius: 5px !important;
+	border-radius: 5px !important;
+}
+.aws-search-form .icon {
+	position: absolute;
+	top: 13px;
+	left: 12px;
+	z-index: 3;
+	font-size: 2em;
+        color: #1e73be;
+}
+.aws-container .aws-search-field:focus {
+    background-color: #fff !important;
+    color: #63717f !important;
+}
+.aws-search-result .aws_no_result {
+    color: #63717f;
+}
+
+.login p.form-row input[type=text],
+.login p.form-row input[type=text],
+.login p.form-row select, p.form-row textarea,
+.login p.form-row input[type=password],
+.register p.form-row input[type=email],
+.login p.form-row input[type=tel],
+.login p.form-row .select2-container {
+    max-width: 100% !important;
+}
+
+input[type="text"],
+input[type="date"],
+input[type="datetime"],
+input[type="email"],
+input[type="number"],
+input[type="search"],
+input[type="time"],
+input[type="url"],
+input[type="tel"],
+input[type="password"],
+textarea,
+select, .select2-container--default .select2-selection--single,
+.select2-container .select2-choice {
+    background: #f0f0f0 !important;
+    border: 1px solid #384b64 !important;
+    font-size: 1em !important;
+    margin: 0 !important;
+    color: #384b64 !important;
+    outline: 0 !important;
+    padding: 5px;
+    padding-left: 10px;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    border-radius: 2px !important;
+    line-height: 2em !important;
+}
+.select2-results__option {
+    background: #435770 !important;
+}
+.select2-container .select2-selection--single {
+    height: inherit;
+}
+.select2-container--default .select2-results__option--highlighted[aria-selected] {
+    background-color: #0073aa !important;
+}
+.select2-container .select2-selection--single .select2-selection__rendered,
+.select2-container--default .select2-selection--single .select2-selection__rendered {
+    color: #384b64 !important;
+    padding-left: 0px;
+    line-height: inherit;
+}
+input[type="text"]:focus,
+input[type="date"]:focus,
+input[type="datetime"]:focus,
+input[type="email"]:focus,
+input[type="number"]:focus,
+input[type="search"]:focus,
+input[type="time"]:focus,
+input[type="url"]:focus,
+textarea:focus,
+select:focus,
+.select2-container .select2-choice,
+select {
+	
+}
+select {
+    -webkit-appearance: menulist-button;
+    height:35px;
+}
+.number {
+    background: #1abc9c;
+    color: #fff;
+    height: 30px;
+    width: 30px;
+    display: inline-block;
+    font-size: 0.8em;
+    margin-right: 4px;
+    line-height: 30px;
+    text-align: center;
+    text-shadow: 0 1px 0 rgba(255,255,255,0.2);
+    border-radius: 15px 15px 15px 0px;
+}
+
+input[type="submit"],
+input[type="button"]
+{
+}
+input[type="submit"]:hover,
+input[type="button"]:hover
+{
+    
+}
+
+/* Mail Chimp */
+.entry-content .mc4wp-form-theme-dark button, .mc4wp-form-theme-dark input[type=submit], div:not(.boxzilla-content) .mc4wp-form-theme input[type="email"] {
+    color: #fff!important;
+}
+.entry-content .mc4wp-form-theme-dark button, .mc4wp-form-theme-dark input[type=submit] {
+    background-color: rgb(227, 0, 1) !important;
+    border-color: rgb(227, 0, 1) !important;
+}
+.boxzilla-container form.mc4wp-form-theme:not(.mc4wp-form-theme-dark) {
+    color: #222222;
+}
+/* other Forms */
+p.form-row input[type=text],
+p.form-row select,
+p.form-row textarea,
+p.form-row input[type=password],
+p.form-row input[type=email],
+p.form-row input[type=tel],
+p.form-row .select2-container {
+    max-width: 63% !important;
+    margin-left: 0px;
+    display: inline-block;
+}
+/* cart */
+input.qty {
+    float: left;
+    padding: 0 0 0 0.5em;
+    height: auto;
+    font-size: 13px;
+}

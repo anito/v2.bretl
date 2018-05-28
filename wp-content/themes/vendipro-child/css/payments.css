@@ -1,0 +1,98 @@
+.grid-5-2 .paymenticon {
+    margin: 0 12px;
+}
+.paymenticonsbox {
+    text-align:center;
+    margin:0 auto;
+}
+.paymenticonsbox.paymentsprite .paymenticon {
+    width:100px;
+    height:69px;
+    background-image:url(images/paymenticons.png)
+}.paymenticonsbox.paymentspritemedium .paymenticon {
+    width:75px;
+    height:52px;
+    background-image:url(images/paymenticonsmedium.png)
+}
+.paymenticonsbox.paymentspritesmall .paymenticon {
+    width:50px;
+    height:35px;
+    background-image:url(images/paymenticonssmall.png)
+}
+.paymenticonsbox.lineiconspritemedium .paymenticon {
+    width:83px;
+    height:58px;
+    background-image:url(images/lineiconsmedium.png)
+}
+.paymenticonsbox.lineiconspritesmall .paymenticon {
+    width:62px;
+    height:46px;
+    background-image:url(images/lineiconssmall.png)
+}
+.paymenticonsbox.roundiconspritemedium .paymenticon {
+    width:73px;
+    height:70px;
+    background-image:url(images/roundmedium.png)
+}
+.paymenticonsbox.roundiconspritesmall .paymenticon {
+    width:55px;
+    height:59px;
+    background-image:url(images/roundsmall.png)
+}.paymenticonsbox.paymenticonsright .paymenticon {
+    float:right
+}
+.paymenticonsbox.paymenticonsleft .paymenticon {
+    float:left
+}
+.paymenticonsbox.paymenticonscenter .paymenticon {
+    display:inline-block
+}
+.paymenticonsbox .paymenticon.icon-visa {
+    background-position:0 0
+}
+.paymenticonsbox .paymenticon.icon-mastercard {
+    background-position:-100px 0
+}
+.paymenticonsbox .paymenticon.icon-americanexpress {
+    background-position:-200px 0
+}
+.paymenticonsbox .paymenticon.icon-paypal {
+    background-position:-300px 0
+}
+.paymenticonsbox .paymenticon.icon-sofort {
+    background-position:-400px 0
+}
+.paymenticonsbox .paymenticon.icon-clickandbuy {
+    background-position:-500px 0
+}
+.paymenticonsbox .paymenticon.icon-vorkasse {
+    background-position:-600px 0
+}
+.paymenticonsbox .paymenticon.icon-ueberweisung {
+    background-position:-700px 0
+}
+.paymenticonsbox .paymenticon.icon-lastschrift {
+    background-position:-800px 0
+}
+.paymenticonsbox .paymenticon.icon-giropay {
+    background-position:-900px 0
+}
+.paymenticonsbox .paymenticon.icon-ec {
+    background-position:-1000px 0
+}
+.paymenticonsbox .paymenticon.icon-billsafe {
+    background-position:-1100px 0
+}
+.paymenticonsbox .paymenticon.icon-amazon {
+    background-position:-1200px 0
+}
+.paymenticonsbox .paymenticon.icon-moneybookers {
+    background-position:-1300px 0
+}
+.paymenticonsbox .paymenticon.icon-postfinance {
+    background-position:-1400px 0
+}
+.paymenticonsbox .paymenticon.icon-nachnahme {
+    background-position:-1500px 0}
+.paymenticonsbox .paymenticon.icon-klarna {
+    background-position:-1600px 0}

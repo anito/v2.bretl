@@ -1,0 +1,11 @@
+- var klass = (isAdmin ? '' : 'hide')
+div
+    div.opt-wpadminbar-active(class=klass)
+        input(type="checkbox" class="" data-type="wpadminbar" id="wpadminbar--cb" checked=(wpadminbar == true))
+        label(for="wpadminbar--cb") Show Admin Bar
+    div.opt-logo-active
+        input(type="checkbox" class="" data-type="logo" id="logo--cb" checked=(logo == true))
+        label(for="logo--cb") Show Logo
+    div.opt-gradient-active
+        input(type="checkbox" class="" data-type="gradient" id="gradient--cb" checked=(gradient == true))
+        label(for="gradient--cb") Show Gradient

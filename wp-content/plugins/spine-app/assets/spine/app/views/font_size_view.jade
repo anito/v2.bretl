@@ -1,0 +1,4 @@
+each val, i in sizes
+    -active = (size === val.name ? 'active' : '')
+    span
+        a(class=[val.name, 'opt-font-'+val.name, active], data-font-size=val.val, data-font-size-name=val.name, data-font-size-test=size)

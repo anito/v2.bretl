@@ -1,0 +1,383 @@
+.puls_fade {
+  -webkit-animation: pulsate_fade 2s ease-out;
+  -webkit-animation-iteration-count: infinite;
+  -ms-animation: pulsate_fade 2s ease-out;
+  -ms-animation-iteration-count: infinite;
+  -moz-animation: pulsate_fade 2s ease-out;
+  -moz-animation-iteration-count: infinite;
+  -o-animation: pulsate_fade 2s ease-out;
+  -o-animation-iteration-count: infinite;
+  animation: pulsate_fade 2s ease-out;
+  animation-iteration-count: infinite;
+  z-index: 999;
+}
+.puls_animate {
+  -webkit-animation: pulsate_animate 2.5s ease-out;
+  -webkit-animation-iteration-count: infinite;
+  -ms-animation: pulsate_animate 2.5s ease-out;
+  -ms-animation-iteration-count: infinite;
+  -moz-animation: pulsate_animate 2.5s ease-out;
+  -moz-animation-iteration-count: infinite;
+  -o-animation: pulsate_animate 2.5s ease-out;
+  -o-animation-iteration-count: infinite;
+  animation: pulsate_animate 2.5s ease-out;
+  animation-iteration-count: infinite;
+  z-index: 999;
+}
+.puls_animate_large {
+  -webkit-animation: pulsate_animate_large 2s ease-out;
+  -webkit-animation-iteration-count: infinite;
+  -ms-animation: pulsate_animate_large 2s ease-out;
+  -ms-animation-iteration-count: infinite;
+  -moz-animation: infinite-pulsate_animate_large 2s ease-out;
+  -moz-animation-iteration-count: infinite;
+  -o-animation: pulsate_animate_large 2s ease-out;
+  -o-animation-iteration-count: infinite;
+  animation: pulsate_animate_large 2s ease-out;
+  animation-iteration-count: infinite;
+  z-index: 999;
+}
+.puls_animate_ {
+  -webkit-animation: pulsate_animation 2s ease-out;
+  -webkit-animation-iteration-count: infinite;
+  -ms-animation: pulsate_animation 2s ease-out;
+  -ms-animation-iteration-count: infinite;
+  -moz-animation: pulsate_animation 2s ease-out;
+  -moz-animation-iteration-count: infinite;
+  -o-animation: pulsate_animation 2s ease-out;
+  -o-animation-iteration-count: infinite;
+  animation: pulsate_animation 2s ease-out;
+  animation-iteration-count: infinite;
+  z-index: 999;
+}
+@-webkit-keyframes pulsate_fade {
+  from {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 1;
+  }
+  to {
+    opacity: 0.5;
+  }
+}
+@-moz-keyframes pulsate_fade {
+  0% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.5;
+  }
+}
+@-ms-keyframes pulsate_fade {
+  0% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.5;
+  }
+}
+@-o-keyframes pulsate_fade {
+  0% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.5;
+  }
+}
+@-moz-keyframes pulsate_fade {
+  from {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 1;
+  }
+  to {
+    opacity: 0.5;
+  }
+}
+@-o-keyframes pulsate_fade {
+  from {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 1;
+  }
+  to {
+    opacity: 0.5;
+  }
+}
+@keyframes pulsate_fade {
+  from {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 1;
+  }
+  to {
+    opacity: 0.5;
+  }
+}
+@-webkit-keyframes pulsate_animate {
+  from {
+    opacity: 0.5;
+    transform: scale(0.5);
+  }
+  30% {
+  	transform: scale(1);
+  }
+  40% {
+  	transform: scale(1.50);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  60% {
+  	transform: scale(1);
+  }
+  70% {
+  	transform: scale(1.05);
+  }
+  80% {
+  	transform: scale(1); 
+  }
+  to {
+    opacity: 0.5;
+    transform: scale(1);
+  }
+}
+@-moz-keyframes pulsate_animate {
+  0% {
+    opacity: 0.5;
+    transform: scale(0.5);
+  }
+  30% {
+  	transform: scale(1);
+  }
+  40% {
+  	transform: scale(1.50);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  60% {
+  	transform: scale(1);
+  }
+  70% {
+  	transform: scale(1.05);
+  }
+  80% {
+  	transform: scale(1); 
+  }
+  100% {
+    opacity: 0.5;
+    transform: scale(1);
+  }
+}
+@-ms-keyframes pulsate_animate {
+  0% {
+    opacity: 0.5;
+    transform: scale(0.5);
+  }
+  30% {
+  	transform: scale(1);
+  }
+  40% {
+  	transform: scale(1.50);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  60% {
+  	transform: scale(1);
+  }
+  70% {
+  	transform: scale(1.05);
+  }
+  80% {
+  	transform: scale(1); 
+  }
+  100% {
+    opacity: 0.5;
+    transform: scale(1);
+  }
+}
+@-o-keyframes pulsate_animate {
+  0% {
+    opacity: 0.5;
+    transform: scale(0.5);
+  }
+  30% {
+  	transform: scale(1);
+  }
+  40% {
+  	transform: scale(1.50);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  60% {
+  	transform: scale(1);
+  }
+  70% {
+  	transform: scale(1.05);
+  }
+  80% {
+  	transform: scale(1); 
+  }
+  100% {
+    opacity: 0.5;
+    transform: scale(1);
+  }
+}
+@-moz-keyframes pulsate_animate {
+  from {
+    opacity: 0.5;
+    transform: scale(0.5);
+  }
+  30% {
+  	transform: scale(1);
+  }
+  40% {
+  	transform: scale(1.50);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  60% {
+  	transform: scale(1);
+  }
+  70% {
+  	transform: scale(1.05);
+  }
+  80% {
+  	transform: scale(1); 
+  }
+  to {
+    opacity: 0.5;
+    transform: scale(1);
+  }
+}
+@-o-keyframes pulsate_animate {
+  from {
+    opacity: 0.5;
+    transform: scale(0.5);
+  }
+  30% {
+  	transform: scale(1);
+  }
+  40% {
+  	transform: scale(1.50);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  60% {
+  	transform: scale(1);
+  }
+  70% {
+  	transform: scale(1.05);
+  }
+  80% {
+  	transform: scale(1); 
+  }
+  to {
+    opacity: 0.5;
+    transform: scale(1);
+  }
+}
+@keyframes pulsate_animate {
+  from {
+    opacity: 1;
+    transform: rotate(0deg) scale(1);
+    top: 2px;
+  }
+  30% {
+  	transform: scale(1);
+  }
+  40% {
+  	opacity: 1;
+  	transform: rotate(-5deg) scale(2.8);
+  	color: rgb(255, 0, 0);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.9);
+  }
+  60% {
+  	opacity: 1;
+  	transform: rotate(0deg) scale(2.2);
+  	color: rgb(255, 0, 0);
+  }
+  70% {
+  	opacity: 1;
+  	transform: scale(1);
+  }
+  to {
+    opacity: 1;
+	transform: rotate(0deg) scale(1);
+	top: 2px;
+  }
+}
+@keyframes pulsate_animate_large {
+  from {
+    opacity: 1;
+    transform: rotate(0deg) scale(1);
+    top: 2px;
+  }
+  30% {
+  	transform: scale(1);
+  }
+  40% {
+  	opacity: 1;
+  	transform: rotate(-5deg) scale(4.8);
+  	color: rgb(255, 0, 0);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.9);
+  }
+  60% {
+  	opacity: 1;
+  	transform: rotate(0deg) scale(3);
+  	color: rgb(255, 0, 0);
+  }
+  70% {
+  	opacity: 1;
+  	transform: scale(1);
+  }
+  to {
+    opacity: 1;
+	transform: rotate(0deg) scale(1);
+	top: 2px;
+  }
+}
+@keyframes infinite-spinning {
+  from {
+  	opacity: 0;
+  	transform: scale(0.7) rotate(0deg);
+  }
+  50% {
+  	opacity: 1;
+  	transform: scale(1);
+  }
+  to {
+  	opacity: 0;
+  	transform: scale(0.7) rotate(360deg);
+  }
+}

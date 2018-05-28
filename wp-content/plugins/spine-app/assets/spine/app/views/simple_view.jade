@@ -1,0 +1,23 @@
+if small
+    - var classes=["modal-sm", "modal-dialog"]
+else
+    - var classes=["modal-lg", "modal-dialog"]
+    
+if footer
+    - var footerButtonText = footer.footerButtonText ? footer.footerButtonText : 'Ok'
+
+div(class=classes)
+    .modal-content
+        if header
+            .modal-header.bg-warning.text-white
+                h4 #{header}
+                button(class=["close", "text-muted"] type="button" data-dismiss="modal" aria-hidden="true") &times;
+        if body
+            div(class=["modal-body", "dark"] style={ "text-align": "center" }) !{body}
+            if info
+                .modal-header.label-info
+                    .label.label-info #{info}
+        if footer
+            div(class=["modal-footer", "dark"] style={position: "relative"})
+                div(class="" style={"text-align": "left", "max-width": "90%"}) #{footer.footerText}
+                    button.button(class=['btn', 'btn-light', 'opt-btn-close'] style={}) #{footerButtonText}
