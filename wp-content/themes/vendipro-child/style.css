@@ -3502,7 +3502,7 @@ table.shop_table img {
 .woocommerce-additional-fields__field-wrapper, .woocommerce-shipping-fields__field-wrapper {
     padding-right: 5%;
 }
-.grid .column {
+.checkout .grid .column {
     margin-bottom: 40px;
 }
 .metaslider .caption-wrap, .nivo-caption {
