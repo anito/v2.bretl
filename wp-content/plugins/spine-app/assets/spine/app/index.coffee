@@ -41,11 +41,14 @@ class App extends Spine.Controller
         @setProduction()
         @fontSizeView.setFontSize()
         @notify('
-            <h1>Achtung!</h1>
-            <p>Dieser Shop ist lediglich eine</p>
-            <h4 class="badge-pill badge-warning">Demo</h4>
-            <p>Hier angebotene Waren können NICHT käuflich erworben werden.</p>
-            <p>Personen, Waren, Anschriften, Email-Adressen sowie Bankverbindungen sind rein fiktiv.</p>') if settings.showHint
+            <h2>Wichtiger Hinweis!</h2>
+            <p></p>
+            <h4 class="badge-pill badge-warning">Demo-Shop !</h4>
+            <p></p>
+            <p>Hier angebotene Waren können nicht käuflich erworben werden.</p>
+            <p>VISA (Stripe) Bezahlungen können zu Testzwecken mit der Kartennummer:</p>
+            <p>4242 4242 4242 4242</p>
+            <p>getätigt werden</p>') if settings.showHint
         
         @headerView.render()
         
@@ -64,7 +67,7 @@ class App extends Spine.Controller
     notify: (text) ->
         @modalView.render
           small: true
-          header: 'Demonstrationsmodus!'
+          header: 'Demo Shop'
           body: require("views/notify") text: text
           footer:
             footerButtonText: 'Alles klar'

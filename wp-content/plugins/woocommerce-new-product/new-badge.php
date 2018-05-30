@@ -47,40 +47,29 @@ if ( in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', g
 		return get_option( 'wc_nb_categories' );
 	}
 
+	function get_main_category_slug() {
+
+		return get_option( 'wc_nb_category_slug' );
+	}
+
 	function init_new_products( $q ) {
 
 
 		
-		// return w/o filtering but still attach the correct label
 		if ( !is_options_auto() ) {
 			
-			/*
-			 * Since we are not in auto mode, we must add a badge to each new product via javascript
-			 */
-			$params = array(
-				'label' => get_wc_nb_label()
-			);
-			// pass args to the document
-			wp_localize_script( 'new_cat_badge', 'new_badge_params', $params );
-
-			// take care all new products are labeled also when Auto option isi disabled
-			wp_register_script( 'new_cat_badge', plugins_url( '/assets/js/new_cat_badge.js', __FILE__ ), array( 'jquery' ), '1.0', true );
-			wp_enqueue_script( 'new_cat_badge' );
-			
+			// return w/o filtering but still attach the correct label
+			add_action( 'wp_enqueue_scripts', 'enqueue_script_add_badge' );
 			return;
 			
 		}
 				
-		// rewrite urls to point to the correct New Products Page
-		wp_register_script( 'fix_url', plugins_url( '/assets/js/fix_url.js', __FILE__ ), array( 'jquery' ), '1.0', true );
-		wp_enqueue_script( 'fix_url' );
+		add_action( 'wp_enqueue_scripts', 'enqueue_script_fix_url' );
 
 
 		if ( may_be_filtered_post() ) {
 
-			// hide shop page description
-			wp_register_script( 'hide_description', plugins_url( '/assets/js/hide_description.js', __FILE__ ), array( 'jquery' ), '1.0', true );
-			wp_enqueue_script( 'hide_description' );
+			add_action( 'wp_enqueue_scripts', 'enqueue_script_hide_description' );
 
 			add_filter( 'woocommerce_page_title', 'new_products_title', 10, 2 );
 			add_action( 'woocommerce_archive_description', 'new_archive_term_description' );
@@ -88,9 +77,45 @@ if ( in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', g
 
 			// start filtering
 			add_filter( 'posts_where', 'filter_new_products' );
+			
 		}
 	}
 
+	function enqueue_script_hide_description() {
+			
+		// hide shop page description
+		wp_register_script( 'hide_description', plugins_url( '/assets/js/hide_description.js', __FILE__ ), array( 'jquery' ), '1.0', true );
+		wp_enqueue_script( 'hide_description' );
+		
+	}
+	
+	/*
+	 * Since we are not in auto mode, we must add the badge to each new product via javascript
+	 */
+	function enqueue_script_add_badge() {
+			
+		$params = array(
+			'label' => get_wc_nb_label(),
+            'category_slug' => get_main_category_slug()
+		);
+
+		// take care all new products are labeled also when Auto option isi disabled
+		wp_register_script( 'new_cat_badge', plugins_url( '/assets/js/new_cat_badge.js', __FILE__ ), array( 'jquery' ), '1.0', true );
+		wp_enqueue_script( 'new_cat_badge' );
+		
+		// pass args to the document
+		wp_localize_script( 'new_cat_badge', 'new_badge_params', $params );
+		
+	}
+	
+	function enqueue_script_fix_url() {
+		
+		// rewrite urls to point to the correct New Products Page
+		wp_register_script( 'fix_url', plugins_url( '/assets/js/fix_url.js', __FILE__ ), array( 'jquery' ), '1.0', true );
+		wp_enqueue_script( 'fix_url' );
+		
+	}
+	
 	function new_products_title( $title ) {
 
 		$title = get_the_category_by_ID( get_main_category_id() );
@@ -113,15 +138,14 @@ if ( in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', g
 
 	function new_archive_term_description() {
 
-//		if ( is_product_taxonomy() && 0 === absint( get_query_var( 'paged' ) ) ) {
 		if ( may_be_filtered_post() && 0 === absint( get_query_var( 'paged' ) ) ) {
 			$description = wc_format_content( category_description( get_main_category_id() ) );
 			if ( $description ) {
 				echo '<div class="term-description">' . $description . '</div>';
 			}
 		}
-//		var_dump(get_term('1343', 'product_cat'));
-	}
+
+    }
 
 	function new_archive_term_image() {
 		if ( may_be_filtered_post() ) {
@@ -165,7 +189,7 @@ if ( in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', g
                 
 				if ( is_options_auto() ) {
 					add_action( 'woocommerce_before_shop_loop_item_title', array( $this, 'show_product_loop_new_badge' ), 30 );
-					add_filter('woocommerce_before_single_product_summary', array( $this, 'show_single_product_new_badge' ), 30 );
+					add_filter( 'woocommerce_before_single_product_summary', array( $this, 'show_single_product_new_badge' ), 30 );
 				}
 				
 				add_action( 'init', array($this, 'init_settings') );
@@ -184,8 +208,17 @@ if ( in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', g
 				
 				$terms = get_terms( $cat_args );
 				$product_categories = array();
+                $category_slug = "";
 				foreach ( $terms as $category ) {
-					$product_categories[$category->term_id] = $category->name;
+					
+                    $category_name = $category->name;
+                    $category_id = $category->term_id;
+                    $category_option_id = intval( get_option( 'wc_nb_categories' ) );
+					$product_categories[$category_id] = $category_name;
+					
+                    if( $category_option_id === $category_id ) {
+                        $category_slug = $category->slug;
+                    }
 				}
 				
 				$this->settings = array(
@@ -211,6 +244,12 @@ if ( in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', g
 						'options' => $product_categories,
 					),
 					array(
+						'title' => "Name der Kategorie für neue Produkte",
+						'id' => 'wc_nb_category_slug',
+						'type' => 'hidden',
+                        'default' => $category_slug
+					),
+					array(
 						'title' => __( 'Höchstalter (in Tagen)', 'woocommerce-new-badge' ),
 						'desc' => __( 'Anzahl der Tage ab Veröffentlichung, die das Produkt als <strong>neu</strong> gelten soll', 'woocommerce-new-badge' ),
 						'desc_tip' => true,
@@ -233,6 +272,7 @@ if ( in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', g
 				
 				// Default options
 				add_option( 'wc_nb_newness', '30' );
+				add_option( 'wc_nb_category_slug', $category_slug );
 
 
 				// Admin
@@ -253,11 +293,11 @@ if ( in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', g
 			}
 
 			// Load / Save the settings
-			function admin_settings( $array, $current_section ) {
+			function admin_settings( $settings, $current_section ) {
 				if( 'new_products' == $current_section ) {
 					return $this->settings;
 				} else {
-					return $array;
+					return $settings;
 				}
 			}
 
@@ -291,16 +331,16 @@ if ( in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', g
 			}
 			// Display the NEW badge for loop items
 			function show_product_loop_new_badge() {
-//				
-				// If the product was published within the newness time frame display the new badge
+
+                // If the product was published within the newness time frame display the new badge
 				if ( $this->is_new() ) {
-					$this->output('left');
+					$this->output( 'left');
 				}
 			}
 			// Display the NEW badge for single products
 			function show_single_product_new_badge() {
                 if ( $this->is_new() ) {
-					$this->output('right');
+					$this->output( 'right');
 				}
 			}
 

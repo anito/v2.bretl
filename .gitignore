@@ -30,6 +30,13 @@ CVS
 !/wp-content/themes/*-child
 /wp-content/themes/*-child/assets
 
+# wp-touch child
+!/wp-content/wptouch-data
+/wp-content/wptouch-data/*
+!/wp-content/wptouch-data/themes
+/wp-content/wptouch-data/themes/*
+!/wp-content/wptouch-data/themes/*-child
+
 # my plugins
 !/wp-content/plugins
 /wp-content/plugins/*
