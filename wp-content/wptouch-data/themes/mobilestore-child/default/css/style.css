@@ -985,6 +985,7 @@
         background-color: rgb(211, 0, 1) !important;
     }
     [class*="pwb-brands-"] small {
+        background: #394963;
         line-height: 1em;
         padding: 6px 2px;
         border-radius: 50%;
