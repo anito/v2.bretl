@@ -354,8 +354,6 @@
         border-bottom: 0px dashed  rgb(200, 200, 200) !important;
         border-left: 0px solid rgb(227, 0, 1) !important;
         font-family: 'Oswald', serif !important;
-        text-shadow: 1px 1px rgba(0, 0, 0, 1) !important;
-        background-color: transparent !important;
         font-weight: normal !important;
     }
     .post-head-area + h3 {
@@ -363,12 +361,14 @@
         margin-top: 20px !important;
         margin-bottom: 20px !important;
     }
-    .term-description > h5:not(:first-child), .page-description > h5:not(:first-child) {
+    .term-description > h5:not(:first-child),
+    .page-description > h5:not(:first-child) {
         font-size: 1em;
         color: #c1c1c1 !important;
         border-left: 5px solid #c1c1c1;
     }
-    .term-description > *:not(:first-child):not(a), .page-description > *:not(:first-child):not(a)  {
+    .term-description > *:not(:first-child):not(a),
+    .page-description > *:not(:first-child):not(a)  {
         color: rgb(227, 0, 1) !important;
         padding: 15px !important;
         margin: 15px 0 !important;
