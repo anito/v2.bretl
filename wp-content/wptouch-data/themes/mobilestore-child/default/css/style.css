@@ -343,10 +343,12 @@
     .products .product h2 {
         font-size: 0.80em !important;
     }
-    .term-description > *:first-child:not(.metaslider), .page-description > *:first-child:not(.metaslider), .post-head-area + h3, section.related > h2:first-child {
+    .term-description > *:first-child:not(.metaslider),
+    .page-description > *:first-child:not(.metaslider),
+    .post-head-area + h3,
+    section.related > h2:first-child {
         padding: 0 !important;
         margin: 0px 16px 14px !important;
-        color: rgb(200, 200, 200) !important;
         font-size: 1.3em;
         border-top: 0px dashed rgb(200, 200, 200) !important;
         border-bottom: 0px dashed  rgb(200, 200, 200) !important;
