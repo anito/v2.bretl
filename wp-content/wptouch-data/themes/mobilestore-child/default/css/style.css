@@ -1,6 +1,6 @@
 @media only screen and (max-width: 768px) {
     body {
-        color: #000000;
+        color: #394a64;
     }
 
     .product .woocommerce-tabs .active a {
@@ -45,8 +45,6 @@
         line-height: 1em;
         font-size: 2.0rem;
         margin: 0.4em 0 0.5em !important;
-        color: rgb(255, 255, 255);
-        text-shadow: 1px 1px rgba(0, 0, 0, 1) !important;
         display: inherit;
     }
 
@@ -71,12 +69,14 @@
     }
     
     .products a .onsale {
-        padding-top: 5px !important;
-        height: 0;
+        height: 30px;
         text-indent: -9999999px;
+        font-size: 70%;
     }
-    .products a .onsale i {
+    .products a .onsale .badge {
         text-indent: 0;
+        height: initial;
+        padding: 0.5em;
     }
     
     .smartphone ul.products li:not(.vertical) {
@@ -90,7 +90,7 @@
         line-height: 130%;
     }
     i.wptouch-icon-menu, i.wptouch-icon-basket {
-        font-size: 400% !important;
+        font-size: 300% !important;
         top: 12px;
         width: 65px;
     }
@@ -122,9 +122,6 @@
         padding: 0;
         margin: 0;
     }
-    .page .post-1008 {
-        background-color: #fff !important;
-    }
     .search-no-results .post {
         margin: 20px;
         color: #dddddd;
@@ -132,8 +129,8 @@
     }
 
     .page .post {
-        background-color: #fff;
-        color: #121212;
+        background-color: #eaeaea;
+        color: #394a64;
     }
     .post-head-area {
         margin: 0 0 20px 0;
@@ -341,12 +338,7 @@
     }
     ul.products li img::before {
         content: "";
-        height: 20px;
-    }
-    .products .product:not(.vertical) > a::before {
-        content: "";
-        display: block;
-        margin-top: 20px;
+        height: 0;
     }
     .entry-post .products .product:not(.vertical) > a::before {
         margin-top: 0px;
@@ -653,16 +645,16 @@
         display: none;
     }
     .sale-badge {
-	position: absolute;
-	right: 7px;
-	background: #fff;
-	border-radius: 3px;
-	border: 1px solid #db2b1d;
-	font-size: 0.8rem;
-	color: #db2b1d;
-	font-weight: 600;
-	padding: 0.1em 0.3em;
-    }
+        position: absolute;
+        right: 7px;
+        background: #fff;
+        border-radius: 3px;
+        border: 1px solid #db2b1d;
+        font-size: 0.8rem;
+        color: #db2b1d;
+        font-weight: 600;
+        padding: 0.1em 0.3em;
+	}
     h3.label, h4.label {
 /*        width: 100%;
         background-color: rgba(240, 240, 240, 1);
@@ -826,7 +818,7 @@
         text-align: center;
     }
     .product .product-top .sale-badge.badge {
-        background: rgb(227, 0, 1) none repeat scroll 0 0;
+        background: rgb(216, 157, 3) none repeat scroll 0 0;
         color: #fff;
         right: -39px;
         transform: rotate(45deg);
@@ -834,6 +826,7 @@
         max-width: 134px;
         top: 15px;
         padding: 5px 0;
+        border-width: 2px;
     }
     .wc-new-badge {
         background: rgb(32, 181, 37) none repeat scroll 0 0;

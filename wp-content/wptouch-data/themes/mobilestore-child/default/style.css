@@ -24,7 +24,7 @@
         text-align: center;
     }
     .product .product-top .sale-badge.badge {
-        background: rgb(227, 0, 1) none repeat scroll 0 0;
+        background: rgb(216, 157, 3) none repeat scroll 0 0;
         color: #fff;
         right: -39px;
         transform: rotate(45deg);
@@ -32,6 +32,7 @@
         max-width: 134px;
         top: 15px;
         padding: 5px 0;
+        border-width: 0;
     }
     .wc-new-badge {
         background: rgb(32, 181, 37) none repeat scroll 0 0;
