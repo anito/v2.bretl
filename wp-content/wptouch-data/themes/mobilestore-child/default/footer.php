@@ -20,11 +20,5 @@
 		<?php get_template_part( 'switch-link' ); ?>
 	
 	</div><!-- page wrapper -->
-    <!--<div class="_pp_overlay" style="opacity: 0.8; height: 1738px; width: 1233px; display: none;"></div>-->
-    <!-- modal-dialogue -->
-    <div tabindex="0" id="modal-view" class="modal fade">
-        <div class="modal-dialog modal-lg" role="document">initially needed by Modal</div>
-    </div>
-    <!-- /.modal -->
 </body>
 </html>
