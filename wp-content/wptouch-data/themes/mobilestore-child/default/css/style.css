@@ -636,7 +636,7 @@
         margin-bottom: 0px;
         position: relative;
         padding: 12px;
-        color: #000;
+        color: inherit;
     }
     form.cart .quantity label {
         display: none;
