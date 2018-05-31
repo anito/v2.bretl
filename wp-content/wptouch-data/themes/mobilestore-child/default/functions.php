@@ -63,21 +63,10 @@ function add_scripts() {
      */
     
     wp_register_script('bootstrap', get_stylesheet_directory_uri() . '/node_modules/bootstrap/dist/js/bootstrap.js', array('jquery'), false, true);
-    wp_enqueue_script('bootstrap');
+//    wp_enqueue_script('bootstrap');
+//    wp_enqueue_style('my-bootstrap', get_stylesheet_directory_uri() . '/css/bootstrap/index.css');
+//    wp_enqueue_style('bootstrap', get_stylesheet_directory_uri() . '/node_modules/bootstrap/dist/css/bootstrap.css');
     
-    /*
-     * My Customized Bootstrap Vars && Bootstrap Styles Libraries
-     */
-    /*
-     * Complete Bootstrap ( All Libraries )
-     */
-    //    wp_enqueue_style('bootstrap', get_stylesheet_directory_uri() . '/node_modules/bootstrap/dist/css/bootstrap.css');
-    wp_enqueue_style('my-bootstrap', get_stylesheet_directory_uri() . '/css/bootstrap/index.css');
-    /*
-     * 
-     * 
-     */
-	
 	wp_localize_script( 'my-mobilestore-js', 'translated_strings', $translation_array );
 	wp_enqueue_script( 'my-mobilestore-js' );
 	// Enqueue the registered script file

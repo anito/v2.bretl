@@ -75,8 +75,6 @@
     }
     .products a .onsale .badge {
         text-indent: 0;
-        height: initial;
-        padding: 0.5em;
     }
     
     .smartphone ul.products li:not(.vertical) {
@@ -130,7 +128,6 @@
 
     .page .post {
         background-color: #eaeaea;
-        color: #394a64;
     }
     .post-head-area {
         margin: 0 0 20px 0;
@@ -267,7 +264,7 @@
         text-transform: uppercase;
         border-radius: 4px;
         color: rgb(227, 227, 227) !important;
-        background-color: rgb(227, 0, 1) !important;
+        background-color: #c53131 !important;
         white-space: nowrap;
         z-index: 999;
     }

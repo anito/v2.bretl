@@ -25,9 +25,11 @@ if ( ! class_exists( 'SpineApp_Public' ) ) { // Don't initialise if there's alre
 		 * @since 2.0.0		
 		 */
 		public function init() {
-			add_filter( 'body_class', array ( $this, 'body_class' ) );
-            add_action ( 'wp_enqueue_scripts', array ( $this, 'enqueue_scripts' ) );
-			add_action ( 'wp_footer', array ( $this, 'add_spine_js' ), 1001) ;
+            if( !wp_is_mobile() ) {
+                add_filter( 'body_class', array ( $this, 'body_class' ) );
+                add_action ( 'wp_enqueue_scripts', array ( $this, 'enqueue_scripts' ) );
+                add_action ( 'wp_footer', array ( $this, 'add_spine_js' ), 1001) ;
+            }
 		}
         
         /*		
