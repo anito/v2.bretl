@@ -194,7 +194,15 @@
 
     }
     #menu-right li img,  .woocommerce-cart form.cart li img  {
-        top: 20% !important;
+        top: 30% !important;
+    }
+    #menu-right li {
+        overflow: auto;
+    }
+    #menu-right li .quantity {
+        position: inherit;
+        float: right;
+        margin: 22px 0;
     }
     button#catapultCookie {
         background: #dd3333;
