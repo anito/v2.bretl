@@ -507,7 +507,10 @@ function wc_remove_related_products($args) {
 }
 
 if (wp_is_mobile()) {
-    add_action('init', 'load_wptouch');
+    include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
+    if( is_plugin_active('wptouch-pro') ) {
+        add_action('init', 'load_wptouch');
+    }
 }
 
 function load_wptouch() {
