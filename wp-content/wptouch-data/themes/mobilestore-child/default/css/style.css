@@ -127,7 +127,7 @@
     }
 
     .page .post {
-        background-color: #eaeaea;
+        /*background-color: #eaeaea;*/
     }
     .post-head-area {
         margin: 0 0 20px 0;
@@ -883,8 +883,8 @@
         color: #696969;
     }
     .pwb-brands-col3 {
+        background: #f5f5f5;
         border-radius: 3px;
-        background: rgb(109, 109, 109);
         margin-bottom: 12px;
         padding: 10px !important;
         width: 48% !important;
@@ -985,7 +985,6 @@
         background-color: rgb(211, 0, 1) !important;
     }
     [class*="pwb-brands-"] small {
-        background: #5a5a5a;
         line-height: 1em;
         padding: 6px 2px;
         border-radius: 50%;
