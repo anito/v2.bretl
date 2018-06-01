@@ -94,7 +94,7 @@ $social_prefix = 'social_';
 </div>
 
 <footer class="footer">
-    <div class="footer__bg_copyright"><a href="https://www.flickr.com/photos/chrisnaton/34880385211" target="_blank"><span class="title h3">Big and bigger</span><span class="author h2">by Chris Frank</span></a></div>
+    <div class="footer__bg_copyright"><?php echo $credits; ?></div>
     <div class="footer__content">
         <?php printf( __( '%1$s is proudly powered by %2$s' ), get_bloginfo('name'), '<a href="https://webpremiere.de/" target="_blank"><img class="logo" src="https://webpremiere.de/files/public-docs/logos/webpremiere-logo-5.svg" alt="WebPremiere"></a>' ); ?>
     </div>
