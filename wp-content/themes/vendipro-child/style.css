@@ -3096,7 +3096,7 @@ div.product .images .thumbnails {
 .woocommerce form .form-row .input-checkbox,
 .mc4wp-checkbox input[type="checkbox"] {
     display: inline-block;
-    margin: 0;
+    margin-right: 8px;
 }
 .woocommerce form .form-row.woocommerce-invalid label {
     padding: 5px;
