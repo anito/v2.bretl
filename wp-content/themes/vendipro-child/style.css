@@ -1446,6 +1446,11 @@ footer#bottom {
     z-index: 0;
     flex: 1;
 }
+.footer-info .logo {
+    height: 21px;
+    margin-bottom: -5px;
+    vertical-align: baseline;
+}
 #primary.has-sidebar {
     width: 72%;
     margin-right: 5px;
