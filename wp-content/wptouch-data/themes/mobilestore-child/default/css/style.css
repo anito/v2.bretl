@@ -77,11 +77,6 @@
         margin-top: 15px;
     }
     
-    .products a .onsale {
-        height: 30px;
-        text-indent: -9999999px;
-        font-size: 70%;
-    }
     .products a .onsale .badge {
         text-indent: 0;
     }
@@ -673,15 +668,17 @@
     }
     .sale-badge {
         position: absolute;
-        right: 7px;
-        background: #fff;
-        border-radius: 3px;
-        border: 1px solid #db2b1d;
+        top: 15px;
+        right: -39px;
         font-size: 0.8rem;
-        color: #db2b1d;
-        font-weight: 600;
         padding: 0.1em 0.3em;
-	}
+        background: rgb(216, 157, 3) none repeat scroll 0 0;
+        color: #fff;
+        transform: rotate(45deg);
+        width: 134px;
+        max-width: 134px;
+        border-width: 0;
+    }
     h3.label, h4.label {
 /*        width: 100%;
         background-color: rgba(240, 240, 240, 1);

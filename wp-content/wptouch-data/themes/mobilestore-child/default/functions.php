@@ -9,6 +9,7 @@
  * Set your own value for 'posts_per_page'
  *
  */
+add_filter( 'woocommerce_output_related_products_args', 'woo_related_products_limit' );
 function woo_related_products_limit() {
 	global $product;
 
@@ -31,6 +32,7 @@ function wc_remove_related_products( $args ) {
 }
 
 // Function to add custom javascript
+add_action('wp_enqueue_scripts', 'add_scripts');
 function add_scripts() {
 	wp_register_script('readmore', get_stylesheet_directory_uri() . '/js/node_modules/readmore-js/readmore.js', array('jquery'), '1.0', true);
 	wp_enqueue_script('readmore');
@@ -51,6 +53,7 @@ function add_scripts() {
 	);
 	wp_localize_script( 'my-mobilestore-js', 'translated_strings', $translation_array );
 	wp_register_script( 'my-mobilestore-js', get_stylesheet_directory_uri() . '/js/my_mobilestore.js', array( 'jquery', 'mobilestore-libraries-js' ), MOBILESTORE_THEME_VERSION, true );
+	wp_enqueue_script( 'my-mobilestore-js' );
     
     wp_enqueue_script('fancybox', get_stylesheet_directory_uri() . '/js/fancybox/jquery.fancybox.js', false, false, true);
     wp_enqueue_script('fancybox-helper', get_stylesheet_directory_uri() . '/js/fancybox-helper.js', false, false, true);
@@ -58,28 +61,17 @@ function add_scripts() {
     wp_enqueue_style('fancybox', get_stylesheet_directory_uri() . '/css/fancybox/jquery.fancybox.css');
     wp_enqueue_style('fancy-metaslider', get_stylesheet_directory_uri() . '/css/fancy-metaslider.css');
     
-    /*
-     * Twitter Bootstrap
-     */
-    
-    wp_register_script('bootstrap', get_stylesheet_directory_uri() . '/node_modules/bootstrap/dist/js/bootstrap.js', array('jquery'), false, true);
-//    wp_enqueue_script('bootstrap');
-//    wp_enqueue_style('my-bootstrap', get_stylesheet_directory_uri() . '/css/bootstrap/index.css');
-//    wp_enqueue_style('bootstrap', get_stylesheet_directory_uri() . '/node_modules/bootstrap/dist/css/bootstrap.css');
-    
-	wp_localize_script( 'my-mobilestore-js', 'translated_strings', $translation_array );
-	wp_enqueue_script( 'my-mobilestore-js' );
-	// Enqueue the registered script file
 	wp_register_script('main', get_stylesheet_directory_uri() . '/js/main.js', false, '1.0', true);
-	// Enqueue the registered script file
 	wp_enqueue_script('main');
 }
 
 // Function to remove javascript
-function remove_scripts() {
+add_action('wp_print_scripts', 'remove_mobilestore_script');
+function remove_mobilestore_script() {
 	wp_dequeue_script( 'mobilestore-js' );
 }
 
+//add_action('wp_print_scripts', 'remove_magic_plus');
 function remove_magic_plus() {
 	remove_action("magictoolbox_WooCommerce_MagicZoomPlus_config_page_menu");
     remove_action('WooCommerce_MagicZoomPlus_load_admin_scripts');
@@ -108,6 +100,7 @@ function remove_magic_plus() {
  * @param object $product current product object
  * @return string sale badge html containing percentage
  */
+add_filter( 'woocommerce_sale_flash', 'set_sale_flash', 1, 3 );
 function set_sale_flash( $html, $post, $product ) {
 	$html = '';
 	if ( $product->get_type() != 'variable' ) {
@@ -155,6 +148,8 @@ function mobilestore_products_per_page_override( $query ) {
 	$settings = mobilestore_get_settings();
 	set_query_var( 'posts_per_page', $settings->mobilestore_products_per_page );
 }
+
+add_action( 'init', 'child_remove_parent_function' );
 function child_remove_parent_function() {
     remove_action( 'woocommerce_after_main_content', 'wptouch_mobilestore_output_content_wrapper_end', 10 );
 	add_action( 'woocommerce_after_main_content', 'wptouch_mobilestore_output_content_wrapper_end_override', 10 );
@@ -165,6 +160,8 @@ function child_remove_parent_function() {
 	remove_action( 'pre_get_posts', 'mobilestore_products_per_page', 30 );
 	add_action( 'pre_get_posts', 'mobilestore_products_per_page_override', 30 );
 }
+
+add_action( 'wp_enqueue_scripts', 'remove_styles', 30 );
 function remove_styles() {
     wp_dequeue_style( 'nb-styles' );
     wp_dequeue_style( 'pac-styles' );
@@ -197,16 +194,10 @@ function archive_term_image() {
 	
 }
 
-add_action( 'init', 'child_remove_parent_function' );
-//add_action('wp_print_scripts', 'remove_magic_plus');
-add_action('wp_print_scripts', 'remove_scripts');
-add_action('wp_enqueue_scripts', 'add_scripts');
 //add_filter('woocommerce_related_products_args','wc_remove_related_products', 10);
 add_filter( 'woocommerce_is_attribute_in_product_name', function () { return false; } );#show meta for product like Größe XXL
-add_filter( 'woocommerce_output_related_products_args', 'woo_related_products_limit' );
+
 add_filter( 'loop_shop_per_page', create_function( '$cols', 'return 20;' ), 999 );
-add_filter( 'woocommerce_sale_flash', 'set_sale_flash', 1, 3 );
-add_action( 'wp_enqueue_scripts', 'remove_styles', 30 );
 
 // we dont need the the cat-thumb overlay
 // remove_action() must be called inside a function and cannot be called directly in your plugin or theme.
