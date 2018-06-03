@@ -31,6 +31,9 @@
         padding: 0;
         margin: 0;
     }
+    #content h3, #content h5 {
+        margin: 12px 0;
+    }
 
     #content {
         padding: 0;

@@ -50,13 +50,13 @@ function add_scripts() {
 		'cvc' => __( 'CVC', 'wptouch-pro' )
 	);
 	wp_localize_script( 'my-mobilestore-js', 'translated_strings', $translation_array );
-	wp_register_script(
-		'my-mobilestore-js',
-		get_stylesheet_directory_uri() . '/js/my_mobilestore.js',
-		array( 'jquery', 'mobilestore-libraries-js' ),
-		MOBILESTORE_THEME_VERSION,
-		true
-	);
+	wp_register_script( 'my-mobilestore-js', get_stylesheet_directory_uri() . '/js/my_mobilestore.js', array( 'jquery', 'mobilestore-libraries-js' ), MOBILESTORE_THEME_VERSION, true );
+    
+    wp_enqueue_script('fancybox', get_stylesheet_directory_uri() . '/js/fancybox/jquery.fancybox.js', false, false, true);
+    wp_enqueue_script('fancybox-helper', get_stylesheet_directory_uri() . '/js/fancybox-helper.js', false, false, true);
+    
+    wp_enqueue_style('fancybox', get_stylesheet_directory_uri() . '/css/fancybox/jquery.fancybox.css');
+    wp_enqueue_style('fancy-metaslider', get_stylesheet_directory_uri() . '/css/fancy-metaslider.css');
     
     /*
      * Twitter Bootstrap
