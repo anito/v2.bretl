@@ -4045,7 +4045,7 @@ label.sup1 {
     font-size: 0.7rem;
 }
 .boxzilla-newsletter-box {
-    overflow-y: hidden;
+    overflow-y: hidden !important;
 }
 .boxzilla-newsletter-box:before {
     content: url(/wp-content/uploads/2018/02/tabelle_bid_standard_kompakt_brief.png);
