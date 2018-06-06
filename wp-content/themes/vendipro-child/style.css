@@ -884,6 +884,9 @@ body.custom-background:before {
     line-height: initial;
     justify-content: center;
 }
+.modal-footer {
+    justify-content: center;
+}
 .modal-content .badge {
     position: inherit;
 }
