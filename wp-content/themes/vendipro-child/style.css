@@ -881,6 +881,8 @@ body.custom-background:before {
 */
 .modal-content {
     color: #38485d;
+    line-height: initial;
+    justify-content: center;
 }
 .modal-content .badge {
     position: inherit;
