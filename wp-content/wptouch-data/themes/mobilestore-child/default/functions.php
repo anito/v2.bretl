@@ -37,24 +37,14 @@ function add_scripts() {
 	wp_register_script('readmore', get_stylesheet_directory_uri() . '/js/node_modules/readmore-js/readmore.js', array('jquery'), '1.0', true);
 	wp_enqueue_script('readmore');
 	if( ! IS_DEV_MODE || !IS_PRODUCTION ) {
+        $current_user = wp_get_current_user();
+        $user_id =  (0 == $current_user->ID) ? '' : $current_user->ID;
+        // hand over the userID to the analytics script
+        wp_localize_script('google-analytics', 'atts', array('user_id' => $user_id, 'ga_id' => GA_ID ));
 		// Register analyticstracking.php file (Google Analytics)
 		wp_register_script('google-analytics', get_stylesheet_directory_uri() . '/js/analyticstracking.js', false, '1.0', true);
 		// Enqueue the registered script file
 		wp_enqueue_script('google-analytics');
-        
-        $current_user = wp_get_current_user();
-        if (0 == $current_user->ID) {
-            // Not logged in.
-            $id = '';
-        } else {
-            // Logged in.
-            $id = $current_user->ID;
-        }
-        // hand over the userID to the analytics script
-        wp_localize_script('google-analytics', 'atts', array(
-            'user_id' => $id,
-            'ga_id' => GA_ID
-        ));
 	}
 	
 	$translation_array = array(

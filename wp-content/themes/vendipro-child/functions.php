@@ -277,26 +277,16 @@ add_action('wp_enqueue_scripts', 'add_scripts');
 function add_scripts() {
 
     if (!IS_DEV_MODE && IS_PRODUCTION) {
+        $current_user = wp_get_current_user();
+        $user_id =  (0 == $current_user->ID) ? '' : $current_user->ID;
+        // hand over the userID to the analytics script
+        wp_localize_script('google-analytics', 'atts', array('user_id' => $user_id, 'ga_id' => GA_ID ));
         // Register analyticstracking.js file (Google Analytics)
         wp_register_script('google-analytics', get_stylesheet_directory_uri() . '/js/analyticstracking.js', false, '1.0', true);
-        // Register gtag.js file (Google Analytics)
-//        wp_register_script('google-analytics', get_stylesheet_directory_uri() . '/js/gtag.js', false, '1.0', true);
         // Enqueue the registered script file
         wp_enqueue_script('google-analytics');
-
-        $current_user = wp_get_current_user();
-        if (0 == $current_user->ID) {
-            // Not logged in.
-            $id = '';
-        } else {
-            // Logged in.
-            $id = $current_user->ID;
-        }
-        // hand over the userID to the analytics script
-        wp_localize_script('google-analytics', 'atts', array(
-            'user_id' => $id,
-            'ga_id' => GA_ID
-        ));
+        // Register gtag.js file (Google Analytics)
+//        wp_register_script('google-analytics', get_stylesheet_directory_uri() . '/js/gtag.js', false, '1.0', true);
     } else {
         wp_register_script('gsap-dev-tools', get_stylesheet_directory_uri() . '/js/gsap/dev/GSDevTools.min.js', false, '0.1', true);
         wp_enqueue_script('gsap-dev-tools');
