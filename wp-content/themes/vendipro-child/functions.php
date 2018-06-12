@@ -1,6 +1,7 @@
 <?php
 require_once( __DIR__ . '/includes/product_category_handler.php');
 require_once( __DIR__ . '/includes/duplicate_content.php');
+require_once( __DIR__ . '/includes/sender_email.php');
 
 add_shortcode('my_sales', 'shortcode_handler_my_sales');
 add_action('init', 'fix_sales_handler_from_post', 998);
@@ -292,7 +293,10 @@ function add_scripts() {
             $id = $current_user->ID;
         }
         // hand over the userID to the analytics script
-        wp_localize_script('google-analytics', 'user', array('id' => $id));
+        wp_localize_script('google-analytics', 'atts', array(
+            'user_id' => $id,
+            'ga_id' => GA_ID
+        ));
     } else {
         wp_register_script('gsap-dev-tools', get_stylesheet_directory_uri() . '/js/gsap/dev/GSDevTools.min.js', false, '0.1', true);
         wp_enqueue_script('gsap-dev-tools');
@@ -514,12 +518,6 @@ if (wp_is_mobile()) {
 }
 
 function load_wptouch() {
-    if (defined('JSON_HEX_TAG')) {
-//        $query_vars = json_encode($_GET, JSON_HEX_TAG);
-    } else {
-//        $query_vars = json_encode($_GET);
-    }
-
     $localize_params = array(
         'ajaxurl' => get_bloginfo('wpurl') . '/wp-admin/admin-ajax.php',
         'siteurl' => str_replace(array('http://' . $_SERVER['SERVER_NAME'] . '', 'https://' . $_SERVER['SERVER_NAME'] . ''), '', get_bloginfo('url') . '/'),
@@ -531,11 +529,6 @@ function load_wptouch() {
     wp_enqueue_script('wptouch-front-ajax', WPTOUCH_URL . '/include/js/wptouch.min.js', array('jquery'), md5(WPTOUCH_VERSION), true);
     wp_localize_script('wptouch-front-ajax', 'wptouchMain', apply_filters('wptouch_localize_scripts', $localize_params));
 
-
-//    apply_filters('wptouch_page_menu_walker');
-//    apply_filters('foundation_menu_inline_style');
-//    apply_filters('foundation_module_init_mobile');
-
     wptouch_load_framework();
 }
 
@@ -546,7 +539,6 @@ function document_gallery_wrapper($gallery) {
         return $gallery;
     } else {
         return $gallery;
-//        return '<div class="table-container">' . $gallery . '</div>';
     }
 }
 

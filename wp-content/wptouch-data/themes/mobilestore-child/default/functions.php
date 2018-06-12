@@ -1,5 +1,5 @@
 <?php
-
+require_once( __DIR__ . '/includes/sender_email.php');
 
 /**
  * WooCommerce Extra Feature Related Products
@@ -41,6 +41,20 @@ function add_scripts() {
 		wp_register_script('google-analytics', get_stylesheet_directory_uri() . '/js/analyticstracking.js', false, '1.0', true);
 		// Enqueue the registered script file
 		wp_enqueue_script('google-analytics');
+        
+        $current_user = wp_get_current_user();
+        if (0 == $current_user->ID) {
+            // Not logged in.
+            $id = '';
+        } else {
+            // Logged in.
+            $id = $current_user->ID;
+        }
+        // hand over the userID to the analytics script
+        wp_localize_script('google-analytics', 'atts', array(
+            'user_id' => $id,
+            'ga_id' => GA_ID
+        ));
 	}
 	
 	$translation_array = array(

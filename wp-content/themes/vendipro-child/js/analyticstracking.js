@@ -3,11 +3,14 @@
   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
   })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
-  var userId = user.id;
-  console.log(userId)
+  var user_id = atts.user_id,
+      ga_id = atts.ga_id;
+      
+  console.log(user_id)
+  console.log(ga_id)
   
-  ga('create', 'UA-112683653-1', 'auto', {
-      userId: userId
+  ga('create', ga_id, 'auto', {
+      userId: user_id
   });
 //  ga('set', 'userId', user.id); // Legen Sie die User ID mithilfe des Parameters "user_id" des angemeldeten Nutzers fest.
   ga('send', 'pageview');

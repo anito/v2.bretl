@@ -3,6 +3,13 @@
   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
   })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
-  ga('create', 'UA-91050562-1', 'auto', 'clientTracker');
-
-  ga('clientTracker.send', 'pageview');
+  var user_id = atts.user_id, ga_id = atts.ga_id;
+      
+  console.log(user_id)
+  console.log(ga_id)
+  
+  ga('create', ga_id, 'auto', {
+      userId: user_id
+  });
+//  ga('set', 'userId', user.id); // Legen Sie die User ID mithilfe des Parameters "user_id" des angemeldeten Nutzers fest.
+  ga('send', 'pageview');
