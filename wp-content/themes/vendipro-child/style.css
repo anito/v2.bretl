@@ -1004,7 +1004,7 @@ body.custom-background:before {
 .archive .page-title:before,
 .page .entry-title:before,
 .single-post .entry-title:before {
-    content: url(css/images/entry-title-badge-yellow.png);
+/*    content: url(css/images/entry-title-badge-yellow.png);*/
     position: absolute;
     left: -25px;
     top: 0px;
@@ -1016,7 +1016,12 @@ body.custom-background:before {
     color: #263242;
     position: absolute;
     top: -41px;
-    left: 0;
+    left: -25px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 600px;
+    max-width: 75%;
     margin-left: 0 !important;
     padding: 10px 20px 10px 73px !important;
     line-height: 1em;
