@@ -1023,7 +1023,7 @@ body.custom-background:before {
     width: 600px;
     max-width: 75%;
     margin-left: 0 !important;
-    padding: 10px 20px 10px 73px !important;
+    padding: 10px 20px 10px 73px;
     line-height: 1em;
     font-size: 1.5rem;
     margin: 30px 0 60px;
@@ -1035,6 +1035,8 @@ body.custom-background:before {
 }
 .page .entry-title {
     max-width: 25%;
+    text-align: center;
+    padding-left: inherit;
 }
 .archive .page-title {
     max-width: 35%;
