@@ -1030,6 +1030,15 @@ body.custom-background:before {
     display: inline-block;
     box-shadow: 2px 4px 9px rgba(0,0,0,0.5);
 }
+.single-post .entry-title {
+    max-width: 75%;
+}
+.page .entry-title {
+    max-width: 25%;
+}
+.archive .page-title {
+    max-width: 35%;
+}
 .page.page-template-default #primary {
     /*position: relative;*/
 }
