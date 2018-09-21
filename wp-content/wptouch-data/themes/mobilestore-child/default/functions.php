@@ -62,6 +62,7 @@ function add_scripts() {
     wp_enqueue_script('fancybox', get_stylesheet_directory_uri() . '/js/fancybox/jquery.fancybox.js', false, false, true);
     wp_enqueue_script('fancybox-helper', get_stylesheet_directory_uri() . '/js/fancybox-helper.js', false, false, true);
     
+    wp_enqueue_style('linear-icons', get_stylesheet_directory_uri() . '/css/linearicons.css');
     wp_enqueue_style('fancybox', get_stylesheet_directory_uri() . '/css/fancybox/jquery.fancybox.css');
     wp_enqueue_style('fancy-metaslider', get_stylesheet_directory_uri() . '/css/fancy-metaslider.css');
     
