@@ -13,6 +13,51 @@
     line-height: 1.7em;
 }
 
+/*scrollTop*/
+.scroll-top {
+    width: 60px;
+    height: 60px;
+    position: fixed;
+    bottom: 100px;
+    left: 250px;
+    background: rgba(255,255,255,.6) !important ;
+    z-index: 9999;
+    border-radius: 50%;
+    border: 1px solid;
+    opacity: 1;
+    transition-timing-function: ease-in, linear;
+    transition-property: opacity, left;
+    transition-duration: .5s, .5s;
+    transition-delay: .5s, 0s;
+}
+a.scroll-top-inner {
+    font-size: 2.5em;
+}
+a.scroll-top-inner, a.scroll-top-inner:active, a.scroll-top-inner:visited {
+    color: rgba(0,0,0,1) !important;
+    text-decoration: none;
+}
+.dimmed {
+    opacity: 0.3;
+    transition: opacity .5s ease-in;
+}
+.scroll-top.active {
+    transition: opacity .5s ease-in 0s;
+}
+.away {
+    position: fixed;
+    left: -99999px;
+    opacity: 0;
+    transition-timing-function: ease-in, linear;
+    transition-property: opacity, left;
+    transition-duration: .5s, .5s;
+    transition-delay: 0s, .5s;
+}
+a.scroll-top-inner:before {
+    width: 60px !important;
+    margin: 0;
+}
+
 @media only screen and (max-width: 768px) {
 
     [class*="-badge badge"] {
