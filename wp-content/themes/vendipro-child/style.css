@@ -3967,7 +3967,7 @@ h6:first-child {
     border-bottom-left-radius: 6px;
     border-top-left-radius: 6px;
 }
-.information-wrapper h6 ~ p, .information-wrapper h6 ~ div {
+.information-wrapper h6 ~ p, .information-wrapper h6 ~ div, .information-wrapper h6 ~ ol, .information-wrapper h6 ~ ul {
     background: #e9ecef;
     border-left: 3px solid #da261d;
     margin: 0;
@@ -4033,7 +4033,7 @@ h6 + p + p, h6 + div + div {
     border-bottom: 1px solid #304056;
     background: #304056;
 }
-h6.info ~ p, h6.info ~ div {
+h6.info ~ p, h6.info ~ div, h6.info ~ ol, h6.info ~ ul {
     border-left: 3px solid #304056;
 }
 h6:before {

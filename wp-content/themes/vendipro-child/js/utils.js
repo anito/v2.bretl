@@ -134,9 +134,9 @@
 
                 that = $(this);
                 
-                if(that.is('p') || that.is('div') ) { // found an Pee / Div
+                if(that.is('p') || that.is('div') || that.is('ol') || that.is('ul')) { // found an Pee / Div / Ol / Ul
                     
-                    var hasSiblings = $('+ p, + div', that).length; // check before we move it away
+                    var hasSiblings = $('+ p, + div, + ol, + ul', that).length; // check before we move it away
                     wrapper.append(that); // move the Pee / Div
                     
                     if( !hasSiblings ) { // the last occurence
