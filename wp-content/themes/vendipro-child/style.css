@@ -966,7 +966,6 @@ body.custom-background:before {
 }
 .featured-image img {
     display: block;
-    max-height: 400px;
     width: 100%;
     height: auto;
 }
