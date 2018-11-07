@@ -346,7 +346,7 @@ function add_scripts() {
      * My Customized Bootstrap Vars && Bootstrap Styles Libraries
      */
     /*
-     * Complete Bootstrap ( All Libraries )
+     * Complete Bootstrap Library( All Libraries )
      */
     //    wp_enqueue_style('bootstrap', get_stylesheet_directory_uri() . '/node_modules/bootstrap/dist/css/bootstrap.css');
     wp_enqueue_style('my-bootstrap', get_stylesheet_directory_uri() . '/css/bootstrap/index.css');
@@ -355,7 +355,6 @@ function add_scripts() {
      * Icons & Fonts
      */
     wp_enqueue_style('linear-icons', get_stylesheet_directory_uri() . '/css/linearicons.css');
-
     wp_enqueue_style('fonts', get_stylesheet_directory_uri() . '/css/fonts.css');
 }
 
