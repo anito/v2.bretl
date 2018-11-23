@@ -12997,6 +12997,8 @@ Released under the MIT License
     };
 
     Settings.findUserSettings = function() {
+      this.log("User: ");
+      this.log(User.first());
       return Settings.findByAttribute('user_id', User.first().id);
     };
 

@@ -916,7 +916,7 @@ body.custom-background:before {
 .badge-stihl {
     position: absolute;
     background: #f60;
-    background-image: url(https://bretl.webpremiere.de/wp-content/uploads/2018/01/pattern.png);
+    background-image: url(/wp-content/uploads/2018/01/pattern.png);
     background-size: 47%;
     top: 34px;
     right: -119px;
@@ -927,14 +927,14 @@ body.custom-background:before {
     display: inline-block;
     height: 27px;
     width: 84px;
-    background-image: url(https://bretl.webpremiere.de/wp-content/uploads/2018/01/badge_0000_stihl.png);
+    background-image: url(/wp-content/uploads/2018/01/badge_0000_stihl.png);
     background-size: 100%;
     background-repeat: no-repeat;
 }
 .badge-viking {
     position: absolute;
     background: #41a739;
-    background-image: url(https://bretl.webpremiere.de/wp-content/uploads/2018/01/pattern.png);
+    background-image: url(/wp-content/uploads/2018/01/pattern.png);
     background-size: 40%;
     top: 76px;
     right: -132px;
@@ -945,7 +945,7 @@ body.custom-background:before {
     content: "";
     height: 30px;
     width: 88px;
-    background-image: url(https://bretl.webpremiere.de/wp-content/uploads/2018/01/badge_0001_viking.png);
+    background-image: url(/wp-content/uploads/2018/01/badge_0001_viking.png);
     background-size: 100%;
     background-repeat: no-repeat;
 }

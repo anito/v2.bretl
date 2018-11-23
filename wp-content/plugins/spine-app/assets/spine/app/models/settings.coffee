@@ -25,6 +25,9 @@ class Settings extends Spine.Model
     first
   
   @findUserSettings: ->
+    @log "User: "
+    @log User.first()
+    
     Settings.findByAttribute('user_id', User.first().id)
   
 module.exports = Model.Settings = Settings
