@@ -2656,7 +2656,7 @@ h3.no-textify ~ * {
     width: 100% !important;
 }
 .textbox-wrapper .media  {
-    display: inherit;
+    /*display: inherit;*/
 }
 .textbox-content-wrapper .media > img {
     width: 100%;
