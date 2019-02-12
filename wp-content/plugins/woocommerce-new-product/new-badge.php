@@ -225,12 +225,13 @@ if ( in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', g
 					array(
 						'title' => __( 'Neue Produkte', 'woocommerce' ),
 						'type' => 'title',
-						'desc' => sprintf( __( 'Produkte können als "Neu" gekennzeichnet werden, bis das hier angegebene Höchstalter erreicht ist.' ) ),
+						'desc' => sprintf( __( 'Je nach angegebenen Höchstalter können Produkte automatisch als Neu gekennzeichnet werden, solange sie dieses noch nicht erreicht haben.' ) ),
 						'id' => 'wc_nb_options',
 					),
 					array(
-						'title' => __( 'Ermittlung nach Höchstalter', 'woocommerce-new-badge' ),
-						'desc' => __( "Neue Produkte nach Höchstalter ermitteln.", 'woocommerce-new-badge' ),
+						'title' => __( 'Automatisch nach Höchstalter ermitteln', 'woocommerce-new-badge' ),
+						'desc' => __( 'Neue Produkte nach Höchstalter ermitteln.', 'woocommerce-new-badge' ),
+                        'desc_tip' => true,
 						'id' => 'wc_nb_auto',
 						'type' => 'checkbox',
 						'default' => 'false',

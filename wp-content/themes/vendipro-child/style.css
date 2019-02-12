@@ -1590,6 +1590,7 @@ ul.products > li {
     margin-right: 1em;
     margin-left: 1em;
     white-space: nowrap;
+    font-size: .8em;
 }
 li.product:hover {
     border-width: 4px;
