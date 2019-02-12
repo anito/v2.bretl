@@ -1587,10 +1587,9 @@ ul.products > li {
     margin-right: 2%;
 }
 .woocommerce ul.products li.product .button {
-    margin-right: 1em;
-    margin-left: 1em;
+    margin: 0 .1em .5em;
     white-space: nowrap;
-    font-size: .8em;
+    font-size: .9em;
 }
 li.product:hover {
     border-width: 4px;
