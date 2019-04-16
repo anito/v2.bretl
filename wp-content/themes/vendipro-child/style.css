@@ -1279,7 +1279,10 @@ a:not(.button):not(.btn):hover, .archive article .entry-header .entry-title a:ho
     transition: color .3s linear;
     color: #0095bd;
 }
-a, a:hover, a:visited, a:focus,
+a, a:hover, a:visited, a:focus {
+    /*color: #ff0000;*/
+}
+[class*="textbox-"] a, [class*="textbox-"] a:hover, [class*="textbox-"] a:visited, [class*="textbox-"] a:focus,
 .shipping-calculator-button,
 .home, header#hmain,
 .blockMsg,

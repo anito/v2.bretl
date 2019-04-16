@@ -85,7 +85,6 @@ select, .select2-container--default .select2-selection--single,
 .select2-container--default .select2-selection--single .select2-selection__rendered,
 .select2-container--default .select2-selection--single .select2-selection__placeholder {
     color: #384b64 !important;
-    padding-left: 0px;
     line-height: 34px !important;
 }
 .select2-container--default .select2-selection--single .select2-selection__arrow {
