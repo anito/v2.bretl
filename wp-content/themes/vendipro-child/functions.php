@@ -276,7 +276,7 @@ add_action('wp_enqueue_scripts', 'add_scripts');
 
 function add_scripts() {
 
-    if (!IS_DEV_MODE && IS_PRODUCTION) {
+    if (!IS_PRODUCTION) {
         $current_user = wp_get_current_user();
         $user_id =  (0 == $current_user->ID) ? '' : $current_user->ID;
         // Register analyticstracking.js file (Google Analytics)
