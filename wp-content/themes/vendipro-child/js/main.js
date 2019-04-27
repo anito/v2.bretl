@@ -174,7 +174,7 @@
         
     }
 
-    var add_gsap = function() {
+    var add_gsap_1 = function() {
 
         var mainTl          = new TimelineMax({repeat: -1, repeatDelay: 10, paused: false, onStart: init}),
             tractorTiltTl   = new TimelineMax({paused: true}),
@@ -192,6 +192,7 @@
             playOrPause;
             
         playOrPause();
+//        GSDevTools.create();
 
         function playOrPause() {
             var paused = mainTl.paused();
@@ -392,6 +393,12 @@
             tractorTiltTl.play('start')
         }
     }
+    
+    var add_gsap_2 = function() {
+        
+//        var morph = 
+        
+    }
 
     add_fb_div();
     add_background_image();
@@ -401,7 +408,8 @@
     add_jQuery_blocking();
     add_open_links_in_new_window_icon();
     add_boxify();
-    add_gsap();
+    add_gsap_1();
+    add_gsap_2();
     // add_readmore();
     
 

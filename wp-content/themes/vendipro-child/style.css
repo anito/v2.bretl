@@ -17,11 +17,6 @@
 @import url('css/klu_.css');
 */
 
-@import url('css/fonts.css');
-@import url('css/forms.css');
-@import url('css/animations.css');
-@import url('css/payments.css');
-
 li.product,
 .page .document-icon,
 .pwb-all-brands .pwb-brands-cols-outer .pwb-brands-col3 {
@@ -1377,7 +1372,7 @@ header a:focus,
 }
 .col .textbox-wrapper > h5 {
     flex: 0;
-    z-index: 1;
+    z-index: 0;
 }
 .col .textbox-wrapper {
     display: flex;
@@ -2237,7 +2232,7 @@ div.product .images .thumbnails {
     font-weight: normal;
     line-height: 1.8em;
     position: relative;
-    z-index: 1;
+    z-index: 0;
 }
 h3 code {
     text-shadow: none;
@@ -2645,6 +2640,14 @@ h3.no-textify ~ * {
     box-shadow: 0 0 40px rgba(48, 64, 86, 0.2) inset;
     color: #384b65;
     line-height: 2em;
+}
+.textbox-content-wrapper > .light {
+    background-color: #f8f9fa;
+    color: #384b65;
+}
+.textbox-content-wrapper.dark {
+    background-color: #384b65;
+    color: #f8f9fa;
 }
 .textbox-content-wrapper >  * {
     padding: 15px 40px 0;
