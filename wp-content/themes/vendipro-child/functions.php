@@ -333,14 +333,30 @@ function add_scripts() {
     wp_enqueue_script('gsap-morph-svg');
     wp_register_script('gsap-scramble-text', get_stylesheet_directory_uri() . '/js/gsap/minified/plugins/ScrambleTextPlugin.min.js', false, '0.9.1', true);
     wp_enqueue_script('gsap-scramble-text');
-    wp_register_script('main', get_stylesheet_directory_uri() . '/js/main.js', array('jquery-utils', 'gsap-tween-max'), '0.10', true);
-    wp_enqueue_script('main');
+    wp_register_script('gsap-throw-props', get_stylesheet_directory_uri() . '/js/gsap/minified/plugins/ThrowPropsPlugin.min.js', false, '0.9.1', true);
+    wp_enqueue_script('gsap-throw-props');
+    wp_register_script('gsap-draw-svg', get_stylesheet_directory_uri() . '/js/gsap/minified/plugins/DrawSVGPlugin.min.js', false, '0.9.1', true);
+    wp_enqueue_script('gsap-draw-svg');
+    wp_register_script('gsap-split-text', get_stylesheet_directory_uri() . '/js/gsap/minified/utils/SplitText.min.js', false, '0.9.1', true);
+    wp_enqueue_script('gsap-split-text');
+    
+    /*
+     * ScrollMagic
+     */
+    wp_register_script('scroll-magic', get_stylesheet_directory_uri() . '/js/ScrollMagic/ScrollMagic.js', array('main'), '0.10', true);
+    wp_enqueue_script('scroll-magic');
     /*
      * GSAP Main
      */
-    wp_register_script('gsap-main', get_stylesheet_directory_uri() . '/js/gsap/custom/main.js', array('main'), '0.10', true);
+    wp_register_script('gsap-main', get_stylesheet_directory_uri() . '/js/gsap/custom/main.splitText.js', array('main'), '0.10', true);
+//    wp_register_script('gsap-main', get_stylesheet_directory_uri() . '/js/gsap/custom/main.drawSVG.js', array('main'), '0.10', true);
     wp_enqueue_script('gsap-main');
     
+    /*
+     * Main JS
+     */
+    wp_register_script('main', get_stylesheet_directory_uri() . '/js/main.js', array('jquery-utils', 'gsap-tween-max'), '0.10', true);
+    wp_enqueue_script('main');
     
     /*
      * Sidebar Cart
