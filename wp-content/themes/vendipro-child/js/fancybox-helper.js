@@ -16,6 +16,7 @@
                 var src, caption, regex, subst, inner = $(this), outer;
 
                 src_big = function (me) {
+                    console.log(me)
                     src = $(me).data('src') ? $(me).data('src') : src;
                     regex = /(.+)(-\d{1,}x\d{1,})(.)(jpg|jpeg|png|gif)/;
                     subst = '$1$3$4';
