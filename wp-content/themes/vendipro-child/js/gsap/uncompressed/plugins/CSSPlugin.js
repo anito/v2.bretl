@@ -1,14 +1,15 @@
 /*!
- * VERSION: 1.20.4
- * DATE: 2018-02-15
+ * VERSION: 2.1.0
+ * DATE: 2019-02-15
  * UPDATES AND DOCS AT: http://greensock.com
  *
- * @license Copyright (c) 2008-2018, GreenSock. All rights reserved.
+ * @license Copyright (c) 2008-2019, GreenSock. All rights reserved.
  * This work is subject to the terms at http://greensock.com/standard-license or for
  * Club GreenSock members, the software agreement that was issued with your membership.
  * 
  * @author: Jack Doyle, jack@greensock.com
  */
+/* eslint-disable */
 var _gsScope = (typeof(module) !== "undefined" && module.exports && typeof(global) !== "undefined") ? global : this || window; //helps ensure compatibility with AMD/RequireJS and CommonJS/Node
 (_gsScope._gsQueue || (_gsScope._gsQueue = [])).push( function() {
 
@@ -31,7 +32,7 @@ var _gsScope = (typeof(module) !== "undefined" && module.exports && typeof(globa
 			p = CSSPlugin.prototype = new TweenPlugin("css");
 
 		p.constructor = CSSPlugin;
-		CSSPlugin.version = "1.20.4";
+		CSSPlugin.version = "2.1.0";
 		CSSPlugin.API = 2;
 		CSSPlugin.defaultTransformPerspective = 0;
 		CSSPlugin.defaultSkewType = "compensated";
@@ -64,7 +65,7 @@ var _gsScope = (typeof(module) !== "undefined" && module.exports && typeof(globa
 			_dummyElement = {style:{}},
 			_doc = _gsScope.document || {createElement: function() {return _dummyElement;}},
 			_createElement = function(type, ns) {
-				return _doc.createElementNS ? _doc.createElementNS(ns || "http://www.w3.org/1999/xhtml", type) : _doc.createElement(type);
+				return (ns && _doc.createElementNS) ? _doc.createElementNS(ns, type) : _doc.createElement(type);
 			},
 			_tempDiv = _createElement("div"),
 			_tempImg = _createElement("img"),
@@ -126,7 +127,10 @@ var _gsScope = (typeof(module) !== "undefined" && module.exports && typeof(globa
 				return null;
 			},
 
-			_getComputedStyle = _doc.defaultView ? _doc.defaultView.getComputedStyle : function() {},
+			_computedStyleScope = (typeof(window) !== "undefined" ? window : _doc.defaultView || {getComputedStyle:function() {}}),
+			_getComputedStyle = function(e) {
+				return _computedStyleScope.getComputedStyle(e); //to avoid errors in Microsoft Edge, we need to call getComputedStyle() from a specific scope, typically window.
+			},
 
 			/**
 			 * @private Returns the css style for a particular property of an element. For example, to get whatever the current "left" css value for an element with an ID of "myElement", you could do:
@@ -386,7 +390,11 @@ var _gsScope = (typeof(module) !== "undefined" && module.exports && typeof(globa
 				if (typeof(v) === "function") {
 					v = v(_index, _target);
 				}
-				return (v == null) ? d : (typeof(v) === "string" && v.charAt(1) === "=") ? parseInt(v.charAt(0) + "1", 10) * parseFloat(v.substr(2)) + d : parseFloat(v) || 0;
+				var isRelative = (typeof(v) === "string" && v.charAt(1) === "=");
+				if (typeof(v) === "string" && v.charAt(v.length - 2) === "v") { //convert vw and vh into px-equivalents.
+					v = (isRelative ? v.substr(0, 2) : 0) + (window["inner" + ((v.substr(-2) === "vh") ? "Height" : "Width")] * (parseFloat(isRelative ? v.substr(2) : v) / 100));
+				}
+				return (v == null) ? d : isRelative ? parseInt(v.charAt(0) + "1", 10) * parseFloat(v.substr(2)) + d : parseFloat(v) || 0;
 			},
 
 			/**
@@ -678,7 +686,7 @@ var _gsScope = (typeof(module) !== "undefined" && module.exports && typeof(globa
 				while (mpt) {
 					val = proxy[mpt.v];
 					if (mpt.r) {
-						val = Math.round(val);
+						val = mpt.r(val);
 					} else if (val < min && val > -min) {
 						val = 0;
 					}
@@ -686,7 +694,7 @@ var _gsScope = (typeof(module) !== "undefined" && module.exports && typeof(globa
 					mpt = mpt._next;
 				}
 				if (d.autoRotate) {
-					d.autoRotate.rotation = d.mod ? d.mod(proxy.rotation, this.t) : proxy.rotation; //special case for ModifyPlugin to hook into an auto-rotating bezier
+					d.autoRotate.rotation = d.mod ? d.mod.call(this._tween, proxy.rotation, this.t, this._tween) : proxy.rotation; //special case for ModifyPlugin to hook into an auto-rotating bezier
 				}
 				//at the end, we must set the CSSPropTween's "e" (end) value dynamically here because that's what is used in the final setRatio() method. Same for "b" at the beginning.
 				if (v === 1 || v === 0) {
@@ -821,7 +829,7 @@ var _gsScope = (typeof(module) !== "undefined" && module.exports && typeof(globa
 				if (!(t instanceof CSSPropTween)) {
 					_overwriteProps.push(this.n);
 				}
-				this.r = r; //round (boolean)
+				this.r = !r ? r : (typeof(r) === "function") ? r : Math.round; //round (boolean)
 				this.type = type || 0; //0 = normal tween, -1 = non-tweening (in which case xs0 will be applied to the target's property, like tp.t[tp.p] = tp.xs0), 1 = complex-value SpecialProp, 2 = custom setRatio() that does all the work
 				if (pr) {
 					this.pr = pr;
@@ -899,11 +907,11 @@ var _gsScope = (typeof(module) !== "undefined" && module.exports && typeof(globa
 				_colorExp.lastIndex = 0;
 				for (i = 0; i < l; i++) {
 					bv = ba[i];
-					ev = ea[i];
+					ev = ea[i] + "";
 					bn = parseFloat(bv);
 					//if the value begins with a number (most common). It's fine if it has a suffix like px
 					if (bn || bn === 0) {
-						pt.appendXtra("", bn, _parseChange(ev, bn), ev.replace(_relNumExp, ""), (autoRound && ev.indexOf("px") !== -1), true);
+						pt.appendXtra("", bn, _parseChange(ev, bn), ev.replace(_relNumExp, ""), (autoRound && ev.indexOf("px") !== -1) ? Math.round : false, true);
 
 					//if the value is a color
 					} else if (clrs && _colorExp.test(bv)) {
@@ -926,9 +934,9 @@ var _gsScope = (typeof(module) !== "undefined" && module.exports && typeof(globa
 									.appendXtra("", bv[1], _parseChange(ev[1], bv[1]), "%,", false)
 									.appendXtra("", bv[2], _parseChange(ev[2], bv[2]), (hasAlpha ? "%," : "%" + str), false);
 							} else {
-								pt.appendXtra(temp.substr(0, temp.indexOf("rgb")) + (hasAlpha ? "rgba(" : "rgb("), bv[0], ev[0] - bv[0], ",", true, true)
-									.appendXtra("", bv[1], ev[1] - bv[1], ",", true)
-									.appendXtra("", bv[2], ev[2] - bv[2], (hasAlpha ? "," : str), true);
+								pt.appendXtra(temp.substr(0, temp.indexOf("rgb")) + (hasAlpha ? "rgba(" : "rgb("), bv[0], ev[0] - bv[0], ",", Math.round, true)
+									.appendXtra("", bv[1], ev[1] - bv[1], ",", Math.round)
+									.appendXtra("", bv[2], ev[2] - bv[2], (hasAlpha ? "," : str), Math.round);
 							}
 
 							if (hasAlpha) {
@@ -956,7 +964,7 @@ var _gsScope = (typeof(module) !== "undefined" && module.exports && typeof(globa
 							for (xi = 0; xi < bnums.length; xi++) {
 								cv = bnums[xi];
 								temp = bv.indexOf(cv, ni);
-								pt.appendXtra(bv.substr(ni, temp - ni), Number(cv), _parseChange(enums[xi], cv), "", (autoRound && bv.substr(temp + cv.length, 2) === "px"), (xi === 0));
+								pt.appendXtra(bv.substr(ni, temp - ni), Number(cv), _parseChange(enums[xi], cv), "", (autoRound && bv.substr(temp + cv.length, 2) === "px") ? Math.round : false, (xi === 0));
 								ni = temp + cv.length;
 							}
 							pt["xs" + pt.l] += bv.substr(ni);
@@ -1057,6 +1065,7 @@ var _gsScope = (typeof(module) !== "undefined" && module.exports && typeof(globa
 				this.multi = options.multi;
 				this.keyword = options.keyword;
 				this.dflt = options.defaultValue;
+				this.allowFunc = options.allowFunc;
 				this.pr = options.priority || 0;
 			},
 
@@ -1335,7 +1344,7 @@ var _gsScope = (typeof(module) !== "undefined" && module.exports && typeof(globa
 				var tm = e._gsTransform || new Transform(),
 					rnd = 100000,
 					style = e.style,
-					isDefault, s, m, n, dec, none;
+					isDefault, s, m, n, dec, nextSibling, parent;
 				if (_transformProp) {
 					s = _getStyle(e, _transformPropCSS, null, true);
 				} else if (e.currentStyle) {
@@ -1344,24 +1353,31 @@ var _gsScope = (typeof(module) !== "undefined" && module.exports && typeof(globa
 					s = (s && s.length === 4) ? [s[0].substr(4), Number(s[2].substr(4)), Number(s[1].substr(4)), s[3].substr(4), (tm.x || 0), (tm.y || 0)].join(",") : "";
 				}
 				isDefault = (!s || s === "none" || s === "matrix(1, 0, 0, 1, 0, 0)");
-				if (_transformProp && ((none = (!_getComputedStyle(e) || _getComputedStyle(e).display === "none")) || !e.parentNode)) { //note: Firefox returns null for getComputedStyle() if the element is in an iframe that has display:none. https://bugzilla.mozilla.org/show_bug.cgi?id=548397
-					if (none) { //browsers don't report transforms accurately unless the element is in the DOM and has a display value that's not "none". Firefox and Microsoft browsers have a partial bug where they'll report transforms even if display:none BUT not any percentage-based values like translate(-50%, 8px) will be reported as if it's translate(0, 8px).
-						n = style.display;
-						style.display = "block";
-					}
-					if (!e.parentNode) {
+				if (_transformProp && isDefault && !e.offsetParent) { //note: if offsetParent is null, that means the element isn't in the normal document flow, like if it has display:none or one of its ancestors has display:none). Firefox returns null for getComputedStyle() if the element is in an iframe that has display:none. https://bugzilla.mozilla.org/show_bug.cgi?id=548397
+					//browsers don't report transforms accurately unless the element is in the DOM and has a display value that's not "none". Firefox and Microsoft browsers have a partial bug where they'll report transforms even if display:none BUT not any percentage-based values like translate(-50%, 8px) will be reported as if it's translate(0, 8px).
+					n = style.display;
+					style.display = "block";
+					parent = e.parentNode;
+					if (!parent || !e.offsetParent) {
 						dec = 1; //flag
-						_docElement.appendChild(e);
+						nextSibling = e.nextSibling;
+						_docElement.appendChild(e); //we must add it to the DOM in order to get values properly
 					}
 					s = _getStyle(e, _transformPropCSS, null, true);
 					isDefault = (!s || s === "none" || s === "matrix(1, 0, 0, 1, 0, 0)");
 					if (n) {
 						style.display = n;
-					} else if (none) {
+					} else {
 						_removeProp(style, "display");
 					}
 					if (dec) {
-						_docElement.removeChild(e);
+						if (nextSibling) {
+							parent.insertBefore(e, nextSibling);
+						} else if (parent) {
+							parent.appendChild(e);
+						} else {
+							_docElement.removeChild(e);
+						}
 					}
 				}
 				if (tm.svg || (e.getCTM && _isSVG(e))) {
@@ -1923,12 +1939,7 @@ var _gsScope = (typeof(module) !== "undefined" && module.exports && typeof(globa
 		_registerComplexSpecialProp("transform,scale,scaleX,scaleY,scaleZ,x,y,z,rotation,rotationX,rotationY,rotationZ,skewX,skewY,shortRotation,shortRotationX,shortRotationY,shortRotationZ,transformOrigin,svgOrigin,transformPerspective,directionalRotation,parseTransform,force3D,skewType,xPercent,yPercent,smoothOrigin", {parser:function(t, e, parsingProp, cssp, pt, plugin, vars) {
 			if (cssp._lastParsedTransform === vars) { return pt; } //only need to parse the transform once, and only if the browser supports it.
 			cssp._lastParsedTransform = vars;
-			var scaleFunc = (vars.scale && typeof(vars.scale) === "function") ? vars.scale : 0, //if there's a function-based "scale" value, swap in the resulting numeric value temporarily. Otherwise, if it's called for both scaleX and scaleY independently, they may not match (like if the function uses Math.random()).
-				swapFunc;
-			if (typeof(vars[parsingProp]) === "function") { //whatever property triggers the initial parsing might be a function-based value in which case it already got called in parse(), thus we don't want to call it again in here. The most efficient way to avoid this is to temporarily swap the value directly into the vars object, and then after we do all our parsing in this function, we'll swap it back again.
-				swapFunc = vars[parsingProp];
-				vars[parsingProp] = e;
-			}
+			var scaleFunc = (vars.scale && typeof(vars.scale) === "function") ? vars.scale : 0; //if there's a function-based "scale" value, swap in the resulting numeric value temporarily. Otherwise, if it's called for both scaleX and scaleY independently, they may not match (like if the function uses Math.random()).
 			if (scaleFunc) {
 				vars.scale = scaleFunc(_index, t);
 			}
@@ -1944,11 +1955,18 @@ var _gsScope = (typeof(module) !== "undefined" && module.exports && typeof(globa
 				m2, copy, has3D, hasChange, dr, x, y, matrix, p;
 			m1.skewType = v.skewType || m1.skewType || CSSPlugin.defaultSkewType;
 			cssp._transform = m1;
+			if ("rotationZ" in v) {
+				v.rotation = v.rotationZ;
+			}
 			if (orig && typeof(orig) === "string" && _transformProp) { //for values like transform:"rotate(60deg) scale(0.5, 0.8)"
 				copy = _tempDiv.style; //don't use the original target because it might be SVG in which case some browsers don't report computed style correctly.
 				copy[_transformProp] = orig;
 				copy.display = "block"; //if display is "none", the browser often refuses to report the transform properties correctly.
 				copy.position = "absolute";
+				if (orig.indexOf("%") !== -1) { //%-based translations will fail unless we set the width/height to match the original target...
+					copy.width = _getStyle(t, "width");
+					copy.height = _getStyle(t, "height");
+				}
 				_doc.body.appendChild(_tempDiv);
 				m2 = _getTransform(_tempDiv, null, false);
 				if (m1.skewType === "simple") { //the default _getTransform() reports the skewX/scaleY as if skewType is "compensated", thus we need to adjust that here if skewType is "simple".
@@ -2012,7 +2030,7 @@ var _gsScope = (typeof(module) !== "undefined" && module.exports && typeof(globa
 					m2.yPercent = _parseVal(v.y, m1.yPercent);
 				}
 
-				m2.rotation = _parseAngle(("rotation" in v) ? v.rotation : ("shortRotation" in v) ? v.shortRotation + "_short" : ("rotationZ" in v) ? v.rotationZ : m1.rotation, m1.rotation, "rotation", endRotations);
+				m2.rotation = _parseAngle(("rotation" in v) ? v.rotation : ("shortRotation" in v) ? v.shortRotation + "_short" : m1.rotation, m1.rotation, "rotation", endRotations);
 				if (_supports3D) {
 					m2.rotationX = _parseAngle(("rotationX" in v) ? v.rotationX : ("shortRotationX" in v) ? v.shortRotationX + "_short" : m1.rotationX || 0, m1.rotationX, "rotationX", endRotations);
 					m2.rotationY = _parseAngle(("rotationY" in v) ? v.rotationY : ("shortRotationY" in v) ? v.shortRotationY + "_short" : m1.rotationY || 0, m1.rotationY, "rotationY", endRotations);
@@ -2045,7 +2063,7 @@ var _gsScope = (typeof(module) !== "undefined" && module.exports && typeof(globa
 				}
 			}
 
-			orig = v.transformOrigin;
+			orig = (typeof(v.transformOrigin) === "function") ? v.transformOrigin(_index, _target) : v.transformOrigin;
 			if (m1.svg && (orig || v.svgOrigin)) {
 				x = m1.xOffset; //when we change the origin, in order to prevent things from jumping we adjust the x/y so we must record those here so that we can create PropTweens for them and flip them at the same time as the origin
 				y = m1.yOffset;
@@ -2062,14 +2080,18 @@ var _gsScope = (typeof(module) !== "undefined" && module.exports && typeof(globa
 				if (_transformProp) {
 					hasChange = true;
 					p = _transformOriginProp;
-					orig = (orig || _getStyle(t, p, _cs, false, "50% 50%")) + ""; //cast as string to avoid errors
+					if (!orig) {
+						orig = (_getStyle(t, p, _cs, false, "50% 50%") + "").split(" ");
+						orig = orig[0] + " " + orig[1] + " " + m1.zOrigin + "px";
+					}
+					orig += "";
 					pt = new CSSPropTween(style, p, 0, 0, pt, -1, transformOriginString);
 					pt.b = style[p];
 					pt.plugin = plugin;
 					if (_supports3D) {
 						copy = m1.zOrigin;
 						orig = orig.split(" ");
-						m1.zOrigin = ((orig.length > 2 && !(copy !== 0 && orig[2] === "0px")) ? parseFloat(orig[2]) : copy) || 0; //Safari doesn't handle the z part of transformOrigin correctly, so we'll manually handle it in the _set3DTransformRatio() method.
+						m1.zOrigin = ((orig.length > 2) ? parseFloat(orig[2]) : copy) || 0; //Safari doesn't handle the z part of transformOrigin correctly, so we'll manually handle it in the _set3DTransformRatio() method.
 						pt.xs0 = pt.e = orig[0] + " " + (orig[1] || "50%") + " 0px"; //we must define a z value of 0px specifically otherwise iOS 5 Safari will stick with the old one (if one was defined)!
 						pt = new CSSPropTween(m1, "zOrigin", 0, 0, pt, -1, pt.n); //we must create a CSSPropTween for the _gsTransform.zOrigin so that it gets reset properly at the beginning if the tween runs backward (as opposed to just setting m1.zOrigin here)
 						pt.b = copy;
@@ -2086,16 +2108,14 @@ var _gsScope = (typeof(module) !== "undefined" && module.exports && typeof(globa
 			if (hasChange) {
 				cssp._transformType = (!(m1.svg && _useSVGTransformAttr) && (has3D || this._transformType === 3)) ? 3 : 2; //quicker than calling cssp._enableTransforms();
 			}
-			if (swapFunc) {
-				vars[parsingProp] = swapFunc;
-			}
 			if (scaleFunc) {
 				vars.scale = scaleFunc;
 			}
 			return pt;
-		}, prefix:true});
+		}, allowFunc:true, prefix:true});
 
 		_registerComplexSpecialProp("boxShadow", {defaultValue:"0px 0px 0px 0px #999", prefix:true, color:true, multi:true, keyword:"inset"});
+		_registerComplexSpecialProp("clipPath", {defaultValue:"inset(0px)", prefix:true, multi:true, formatter:_getFormatter("inset(0px 0px 0px 0px)", false, true)});
 
 		_registerComplexSpecialProp("borderRadius", {defaultValue:"0px", parser:function(t, e, p, cssp, pt, plugin) {
 			e = this.format(e);
@@ -2185,7 +2205,7 @@ var _gsScope = (typeof(module) !== "undefined" && module.exports && typeof(globa
 		}, formatter:_parsePosition});
 		_registerComplexSpecialProp("backgroundSize", {defaultValue:"0 0", formatter:function(v) {
 			v += ""; //ensure it's a string
-			return _parsePosition(v.indexOf(" ") === -1 ? v + " " + v : v); //if set to something like "100% 100%", Safari typically reports the computed style as just "100%" (no 2nd value), but we should ensure that there are two values, so copy the first one. Otherwise, it'd be interpreted as "100% 0" (wrong).
+			return (v.substr(0,2) === "co") ? v : _parsePosition(v.indexOf(" ") === -1 ? v + " " + v : v); //if set to something like "100% 100%", Safari typically reports the computed style as just "100%" (no 2nd value), but we should ensure that there are two values, so copy the first one. Otherwise, it'd be interpreted as "100% 0" (wrong). Also remember that it could be "cover" or "contain" which we can't tween but should be able to set.
 		}});
 		_registerComplexSpecialProp("perspective", {defaultValue:"0px", prefix:true});
 		_registerComplexSpecialProp("perspectiveOrigin", {defaultValue:"50% 50%", prefix:true});
@@ -2526,10 +2546,10 @@ var _gsScope = (typeof(module) !== "undefined" && module.exports && typeof(globa
 				p, sp, bn, en, bs, es, bsfx, esfx, isStr, rel;
 			for (p in vars) {
 				es = vars[p]; //ending value string
-				if (typeof(es) === "function") {
+				sp = _specialProps[p]; //SpecialProp lookup.
+				if (typeof(es) === "function" && !(sp && sp.allowFunc)) {
 					es = es(_index, _target);
 				}
-				sp = _specialProps[p]; //SpecialProp lookup.
 				if (sp) {
 					pt = sp.parse(target, es, p, this, pt, plugin, vars);
 				} else if (p.substr(0,2) === "--") { //for tweening CSS variables (which always start with "--"). To maximize performance and simplicity, we bypass CSSPlugin altogether and just add a normal property tween to the tween instance itself.
@@ -2638,7 +2658,7 @@ var _gsScope = (typeof(module) !== "undefined" && module.exports && typeof(globa
 				while (pt) {
 					if (pt.type !== 2) {
 						if (pt.r && pt.type !== -1) {
-							val = Math.round(pt.s + pt.c);
+							val = pt.r(pt.s + pt.c);
 							if (!pt.type) {
 								pt.t[pt.p] = val + pt.xs0;
 							} else if (pt.type === 1) { //complex value (one that typically has multiple numbers inside a string, like "rect(5px,10px,20px,25px)"
@@ -2662,7 +2682,7 @@ var _gsScope = (typeof(module) !== "undefined" && module.exports && typeof(globa
 				while (pt) {
 					val = pt.c * v + pt.s;
 					if (pt.r) {
-						val = Math.round(val);
+						val = pt.r(val);
 					} else if (val < min) if (val > -min) {
 						val = 0;
 					}
@@ -2765,8 +2785,8 @@ var _gsScope = (typeof(module) !== "undefined" && module.exports && typeof(globa
 		p._mod = function(lookup) {
 			var pt = this._firstPT;
 			while (pt) {
-				if (typeof(lookup[pt.p]) === "function" && lookup[pt.p] === Math.round) { //only gets called by RoundPropsPlugin (ModifyPlugin manages all the rendering internally for CSSPlugin properties that need modification). Remember, we handle rounding a bit differently in this plugin for performance reasons, leveraging "r" as an indicator that the value should be rounded internally..
-					pt.r = 1;
+				if (typeof(lookup[pt.p]) === "function") { //only gets called by RoundPropsPlugin (ModifyPlugin manages all the rendering internally for CSSPlugin properties that need modification). Remember, we handle rounding a bit differently in this plugin for performance reasons, leveraging "r" as an indicator that the value should be rounded internally.
+					pt.r = lookup[pt.p];
 				}
 				pt = pt._next;
 			}

@@ -1443,7 +1443,7 @@ header#hmain .header-inner .container {
 .container#nav-wrapper,
 .container#featured-image,
 .container#main-wrapper {
-    box-shadow: 0px 16px 25px #000;
+    /*box-shadow: 0px 16px 25px #000;*/
 }
 .navbar a, .navbar a:visited {
     font-weight: normal;
@@ -1954,6 +1954,7 @@ div.textwidget p {
 #main-wrapper {
     padding-bottom: 50px;
     position: relative;
+    z-index: -1;
 }
 #tab-description table {
     border-collapse: collapse;

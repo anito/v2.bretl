@@ -13,19 +13,17 @@
 
             if (1 > $(this).find('a').length) {
 
-                var c, caption, regex, subst, inner = $(this), outer;
+                var src, caption, regex, subst, inner = $(this), outer;
 
                 src_big = function (src) {
-
-                    regex = /(.*)(-\d{1,}x\d{1,})(.)(jpg|jpeg|png|gif)/g;
+                    regex = /(.+)(-\d{1,}x\d{1,})(.)(jpg|jpeg|png|gif)/;
                     subst = '$1$3$4';
-
                     return src.replace(regex, subst);
-
                 }
-
+                
+                src = $(this).data('src');
                 caption = $(this).parents('[class*="slide-"]').find('.caption').text();
-                outer = '<a href="' + src_big(this.src) + '" data-fancybox="gallery-' + galleryIndex + '" data-caption="' + caption + '">';
+                outer = '<a href="' + src_big(src) + '" data-fancybox="gallery-' + galleryIndex + '" data-caption="' + caption + '">';
 
                 inner.wrap(outer);
 

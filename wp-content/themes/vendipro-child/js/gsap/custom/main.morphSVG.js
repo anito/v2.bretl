@@ -7,7 +7,7 @@ var rotation = document.querySelector("#rotational"),
         devTools, tracer, tl;
 
 TweenLite.defaultEase = Power1.easeInOut;
-ghost.setAttribute("d", document.querySelector("#svg_start_object").getAttribute("d"));
+ghost.setAttribute("d", document.querySelector("#svg_object_from").getAttribute("d"));
 
 rotation.addEventListener("change", start);
 linear.addEventListener("change", start);
@@ -30,11 +30,11 @@ function start(paused) {
     origin.disabled = !rotation.checked;
     originContainer.style.opacity = rotation.checked ? "1" : "0.3";
     tl = new TimelineMax({repeat: -1, yoyo: true, repeatDelay: 1.5, delay: 1, id: "morphing", paused: (paused === true)});
-    var tween = TweenLite.to("#svg_start_object", 3, {morphSVG: {shape: "#svg_object_2", type: type, origin: origin.value}});
+    var tween = TweenLite.to("#svg_object_from", 3, {morphSVG: {shape: "#svg_object_to", type: type, origin: origin.value}});
     tl.add(tween);
     ghost.style.visibility = rotation.checked ? "visible" : "hidden";
     if (rotation.checked) {
-        tl.to(ghost, 3, {morphSVG: "#svg_object_2"}, 0);
+        tl.to(ghost, 3, {morphSVG: "#svg_object_to"}, 0);
     }
     if (showHandles.checked) {
         tracer = MorphTracer.create(tween, {precision: 0.5, lineOpacity: 0.4, lineColor: "#886ead", originColor: "#9bea00"});

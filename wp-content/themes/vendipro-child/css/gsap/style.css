@@ -113,7 +113,7 @@ button:hover {
 code {
     
 }
-#elephant, #circle, #star, [id^=svg_object_] {
+#elephant, #circle, #star, [id^=svg_object_to_] {
     visibility: hidden;
 }
 

@@ -409,7 +409,7 @@
     add_open_links_in_new_window_icon();
     add_boxify();
     add_gsap_1();
-    add_gsap_2();
+//    add_gsap_2();
     // add_readmore();
     
 
