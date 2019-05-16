@@ -17,12 +17,13 @@
 
                 src_big = function (me) {
                     console.log(me)
-                    src = $(me).data('src') ? $(me).data('src') : src;
+                    src = $(me).data('src') ? $(me).data('src') : me.src;
                     regex = /(.+)(-\d{1,}x\d{1,})(.)(jpg|jpeg|png|gif)/;
                     subst = '$1$3$4';
                     return src.replace(regex, subst);
                 }
                 
+                console.log(this)
                 src = $(this).data('src');
                 caption = $(this).parents('[class*="slide-"]').find('.caption').text();
                 outer = '<a href="' + src_big(this) + '" data-fancybox="gallery-' + galleryIndex + '" data-caption="' + caption + '">';
