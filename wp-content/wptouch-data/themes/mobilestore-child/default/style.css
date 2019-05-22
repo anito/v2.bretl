@@ -57,6 +57,9 @@ a.scroll-top-inner:before {
     width: 60px !important;
     margin: 0;
 }
+label[for*="quantity_"] {
+    display: none !important;
+}
 
 @media only screen and (max-width: 768px) {
 
