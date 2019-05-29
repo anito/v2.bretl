@@ -13,7 +13,7 @@ add_action( 'wp_enqueue_scripts', 'stm_enqueue_parent_styles' );
 
 function child_theme_slug_setup() {
     
-    load_child_theme_textdomain( 'motors', get_stylesheet_directory() . '/languages' );
+    load_child_theme_textdomain( 'motors-child', get_stylesheet_directory() . '/languages' );
     
 }
 add_action( 'after_setup_theme', 'child_theme_slug_setup' );

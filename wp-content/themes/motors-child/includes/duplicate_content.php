@@ -101,7 +101,7 @@ add_action( 'admin_action_rd_duplicate_post_as_draft', 'rd_duplicate_post_as_dra
  */
 function rd_duplicate_post_link( $actions, $post ) {
 	if (current_user_can('edit_posts')) {
-		$actions['duplicate'] = '<a href="' . wp_nonce_url('admin.php?action=rd_duplicate_post_as_draft&post=' . $post->ID, basename(__FILE__), 'duplicate_nonce' ) . '" title="Duplicate this item" rel="permalink">Duplicate</a>';
+		$actions['duplicate'] = '<a href="' . wp_nonce_url('admin.php?action=rd_duplicate_post_as_draft&post=' . $post->ID, basename(__FILE__), 'duplicate_nonce' ) . '" title="' . esc_html__('Duplicate this item', 'motors-child') . '" rel="permalink">' . esc_html__('Duplicate', 'motors-child') . '</a>';
 	}
 	return $actions;
 }
