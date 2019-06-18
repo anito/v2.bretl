@@ -28,7 +28,7 @@ CVS
 !/wp-content/themes
 /wp-content/themes/*
 !/wp-content/themes/*-child
-/wp-content/themes/*-child/assets
+/wp-content/themes/*-child/ignored-assets
 /wp-content/themes/*-child/scratchbook.*
 
 # wp-touch child
