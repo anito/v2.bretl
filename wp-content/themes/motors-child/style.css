@@ -16,3 +16,30 @@
 */
 
 /* Add your own styles here */
+.blurred {
+    content: "";
+    display: inline-block;
+    vertical-align: middle;
+    margin: auto;
+    z-index: -100;
+    min-width: 100% !important;
+    min-height: 100% !important;
+    max-width: none !important;
+    max-height: none !important;
+    width: auto !important;
+    height: auto !important;
+    -webkit-transform: translate3d(0,0,0) scale(2) rotate(.01deg);
+    -ms-transform: translate(0,0) scale(2,2) rotate(.01deg);
+    transform: translate3d(0,0,0) scale(2) rotate(.01deg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'blur\'><feGaussianBlur stdDeviation=\'80\' in=\'SourceGraphic\'></feGaussianBlur></filter></svg>#blur");
+    -webkit-filter: blur(4px) brightness(99%);
+    filter: blur(4px) brightness(99%);
+    transition: filter 1s linear;
+}
