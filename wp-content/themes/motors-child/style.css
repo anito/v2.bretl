@@ -43,6 +43,9 @@
     filter: blur(4px) brightness(99%);
     transition: filter 1s linear;
 }
+#header {
+    z-index: 51;
+}
 .header-service {
     height: 100px;
 }
@@ -73,4 +76,10 @@
     position: absolute;
     top: 100px;
     right: 0;
+}
+.stm-blackout-overlay {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
 }
