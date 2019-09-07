@@ -5,7 +5,6 @@ require_once( __DIR__ . '/includes/sender_email.php');
 
 
 function stm_enqueue_parent_styles() {
-    wp_dequeue_script( 'stm-jquerymigrate' );
 	wp_enqueue_style( 'child-style', get_stylesheet_directory_uri() . '/style.css', array('stm-theme-style') );
 
 }

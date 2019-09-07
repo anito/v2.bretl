@@ -21,7 +21,7 @@
 		<div id="header">
 			<?php
 				get_template_part('partials/service/header', 'service');
-				get_template_part('partials/header/header-nav');
+				
 			?>
 		</div> <!-- id header (header-service.php) -->
 

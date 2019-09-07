@@ -74,7 +74,8 @@
 }
 .header-nav-holder {
     position: absolute;
-    top: 100px;
+    bottom: -52px;
+    height: 52px;
     right: 0;
 }
 .stm-fullwidth-with-parallax {
@@ -85,4 +86,17 @@
     left: 0;
     right: 0;
     bottom: 0;
+    z-index: -1;
+}
+@media (min-width: 640px) {
+
+    .header-service.header-service-sticky {
+        position: fixed !important;
+    }
+}
+@media (min-width: 992px) {
+
+    .header-service .header-menu {
+        margin-right: 20px;
+    }
 }
