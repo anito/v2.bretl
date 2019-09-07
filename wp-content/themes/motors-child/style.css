@@ -43,3 +43,34 @@
     filter: blur(4px) brightness(99%);
     transition: filter 1s linear;
 }
+.header-service {
+    height: 100px;
+}
+.header-service-right {
+    float: right;
+}
+.header-service.header-service-sticky .bloglogo img {
+    width: 100% !important;
+}
+.header-service .service-logo-main {
+    float: left;
+    max-width: 19%;
+    margin: 0px 10px 0 0;
+    margin-right: 10px;
+}
+.header-service.service-transparent-header {
+    background-color: #263242;
+}
+.header-service.service-transparent-header.header-service-sticky {
+    position: fixed !important;
+    background-color: #263242ee !important;
+    padding-top: 25px !important;
+}
+.header-service.service-transparent-header .header-menu li a:hover {
+    color: #fff !important;
+}
+.header-nav-holder {
+    position: absolute;
+    top: 100px;
+    right: 0;
+}
