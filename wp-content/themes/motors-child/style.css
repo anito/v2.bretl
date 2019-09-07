@@ -77,6 +77,9 @@
     top: 100px;
     right: 0;
 }
+.stm-fullwidth-with-parallax {
+    position: relative;
+}
 .stm-blackout-overlay {
     top: 0;
     left: 0;
