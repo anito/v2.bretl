@@ -63,6 +63,7 @@
 }
 .header-service.service-transparent-header {
     background-color: #263242;
+    position: absolute !important;
 }
 .header-service.service-transparent-header.header-service-sticky {
     position: fixed !important;
