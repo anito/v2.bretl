@@ -20,7 +20,7 @@
 <div class="header-service <?php echo esc_attr($fixed_header_class.' '.$transparent_header_class); ?>">
 	<div class="container">
 		<!--Logo-->
-		<div class="service-logo-main header-service-left">
+		<div class="service-logo-main">
 			<?php if(empty($logo_main)): ?>
 				<a class="blogname" href="<?php echo esc_url(home_url('/')); ?>" title="<?php esc_attr_e('Home', 'motors'); ?>">
 					<h1><?php echo esc_attr(get_bloginfo('name')) ?></h1>

@@ -43,28 +43,16 @@
     filter: blur(4px) brightness(99%);
     transition: filter 1s linear;
 }
-#header {
-    z-index: 51;
-}
-.header-service {
-    height: 100px;
-}
 .header-service-right {
     float: right;
-}
-.header-service-left {
-    float: left;
 }
 .header-service.header-service-sticky .bloglogo img {
     width: 100% !important;
 }
 .header-service .service-logo-main {
-    float: left;
     max-width: 19%;
-    margin: 0px 10px 0 0;
-    margin-right: 10px;
 }
-.header-service.service-transparent-header {
+.header-service.service-transparent-header, .header-service.header-service-sticky {
     background-color: #263242;
     position: absolute !important;
 }
@@ -97,6 +85,9 @@
 .entry-header .entry-title {
     top: 60%;
     transform: translateY(-60%);
+}
+.bookly-service-step .bookly-box > .bookly-form-group:nth-child(3) {
+    display: none !important;
 }
 @media (min-width: 640px) {
 
