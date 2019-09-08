@@ -52,6 +52,9 @@
 .header-service-right {
     float: right;
 }
+.header-service-left {
+    float: left;
+}
 .header-service.header-service-sticky .bloglogo img {
     width: 100% !important;
 }
@@ -89,7 +92,7 @@
     bottom: 0;
 }
 .entry-header > .container {
-    min-height: 435px;
+    min-height: 435px !important;
 }
 .entry-header .entry-title {
     top: 60%;
