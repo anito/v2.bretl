@@ -88,6 +88,13 @@
     right: 0;
     bottom: 0;
 }
+.entry-header > .container {
+    min-height: 435px;
+}
+.entry-header .entry-title {
+    top: 60%;
+    transform: translateY(-60%);
+}
 @media (min-width: 640px) {
 
     .header-service.header-service-sticky {
