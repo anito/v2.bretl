@@ -69,6 +69,7 @@
     bottom: -52px;
     height: 52px;
     right: 0;
+    box-shadow: -1px 1px 5px rgba(0, 0, 0, .4);
 }
 .stm-fullwidth-with-parallax {
     position: relative;

@@ -1,0 +1,44 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Motors - Child Theme\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-05-29 15:58+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: \n"
+"Language: \n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Loco https://localise.biz/\n"
+"X-Loco-Version: 2.2.2; wp-5.2.1"
+
+#: includes/duplicate_content.php:104
+msgid "Duplicate this item"
+msgstr ""
+
+#: includes/duplicate_content.php:104
+msgid "Duplicate"
+msgstr ""
+
+#. Name of the theme
+msgid "Motors - Child Theme"
+msgstr ""
+
+#. Description of the theme
+msgid "Motors Child theme"
+msgstr ""
+
+#. URI of the theme
+msgid "http://motors.stylemixthemes.com/"
+msgstr ""
+
+#. Author of the theme
+msgid "StylemixThemes"
+msgstr ""
+
+#. Author URI of the theme
+msgid "http://stylemixthemes.com/"
+msgstr ""
