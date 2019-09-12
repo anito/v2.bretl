@@ -84,7 +84,7 @@
 /*
 *   Push columns to foreground to layer before stm-blackout-overlay
 */
-[class*=vc-col] {
+[class*=vc_col] {
     z-index: 10;
     position: relative;
 }
