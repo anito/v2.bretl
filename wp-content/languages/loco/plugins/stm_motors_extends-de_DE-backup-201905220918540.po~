@@ -1,0 +1,223 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Motors Extends\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-03-19 05:35+0000\n"
+"PO-Revision-Date: 2019-05-22 09:18+0000\n"
+"Last-Translator: Axel <axel@a.dev>\n"
+"Language-Team: Deutsch\n"
+"Language: de_DE\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Loco https://localise.biz/\n"
+"X-Loco-Version: 2.2.2; wp-5.2.1"
+
+#: inc/helpers.php:37
+msgid "I agree with storaging of my data by this website."
+msgstr "I agree with storaging of my data by this website."
+
+#: inc/helpers.php:236
+msgid "Car Rent Price Info"
+msgstr ""
+
+#: inc/helpers.php:311
+msgid "New Payment received"
+msgstr ""
+
+#: inc/helpers.php:312
+msgid "User paid for submission. User ID:"
+msgstr ""
+
+#: inc/widgets/similar_cars.php:5 inc/widgets/similar_cars.php:7
+msgid "STM Similar Cars"
+msgstr ""
+
+#: inc/widgets/similar_cars.php:32 inc/widgets/text-widget.php:63
+#: inc/widgets/latest-posts.php:127 inc/widgets/car_location.php:64
+#: inc/widgets/car_calculator.php:43 inc/widgets/address.php:49
+#: inc/widgets/car-contact-form.php:68 inc/widgets/schedule_showing.php:96
+#: inc/widgets/dealer_info.php:31 inc/widgets/socials.php:71
+#: inc/widgets/recomended_for_you.php:123 inc/widgets/contacts.php:88
+msgid "Title:"
+msgstr ""
+
+#: inc/widgets/text-widget.php:8
+msgid "STM Arbitrary text or HTML."
+msgstr ""
+
+#: inc/widgets/text-widget.php:11
+msgid "STM Text"
+msgstr ""
+
+#: inc/widgets/text-widget.php:69 inc/widgets/address.php:55
+msgid "Content:"
+msgstr ""
+
+#: inc/widgets/text-widget.php:76 inc/widgets/address.php:58
+#: inc/widgets/dealer_info.php:34
+msgid "Automatically add paragraphs"
+msgstr ""
+
+#: inc/widgets/text-widget.php:81
+msgid "Add Socials Widget"
+msgstr ""
+
+#: inc/widgets/latest-posts.php:7
+msgid "Your site&#8217;s most recent Posts."
+msgstr ""
+
+#: inc/widgets/latest-posts.php:9
+msgid "STM Last Post"
+msgstr ""
+
+#: inc/widgets/latest-posts.php:40
+msgid "STM Recent Posts"
+msgstr ""
+
+#: inc/widgets/latest-posts.php:42 inc/widgets/recomended_for_you.php:43
+msgid "1"
+msgstr ""
+
+#: inc/widgets/latest-posts.php:97
+msgid "Comment"
+msgstr ""
+
+#: inc/widgets/latest-posts.php:101
+msgid "No comments"
+msgstr ""
+
+#: inc/widgets/latest-posts.php:131 inc/widgets/recomended_for_you.php:127
+msgid "Number of posts:"
+msgstr ""
+
+#. Base ID
+#: inc/widgets/car_location.php:11
+msgid "Car Location"
+msgstr ""
+
+#: inc/widgets/car_location.php:12
+msgid ""
+"Use this widget on single listing page to display Google Map with car "
+"location."
+msgstr ""
+
+#: inc/widgets/car_calculator.php:5 inc/widgets/car_calculator.php:7
+msgid "STM Auto loan Calculator"
+msgstr ""
+
+#: inc/widgets/address.php:5
+msgid "STM Address widget"
+msgstr ""
+
+#: inc/widgets/address.php:7
+msgid "STM Address"
+msgstr ""
+
+#: inc/widgets/address.php:24
+msgid "Show on map"
+msgstr ""
+
+#: inc/widgets/address.php:52
+msgid "Google map link:"
+msgstr ""
+
+#: inc/widgets/car-contact-form.php:5 inc/widgets/car-contact-form.php:7
+msgid "STM Listing Car Form"
+msgstr ""
+
+#: inc/widgets/car-contact-form.php:71
+msgid "CF7 shortcode:"
+msgstr ""
+
+#. Base ID
+#: inc/widgets/schedule_showing.php:11
+msgid "Schedule Showing"
+msgstr ""
+
+#: inc/widgets/schedule_showing.php:12
+msgid "Schedule showing"
+msgstr ""
+
+#: inc/widgets/schedule_showing.php:54
+msgid "Schedule a Showing"
+msgstr ""
+
+#: inc/widgets/schedule_showing.php:79 inc/widgets/contacts.php:67
+msgid "Contact"
+msgstr ""
+
+#: inc/widgets/schedule_showing.php:100
+msgid "Text:"
+msgstr ""
+
+#: inc/widgets/schedule_showing.php:104 inc/widgets/contacts.php:96
+msgid "Phone:"
+msgstr ""
+
+#: inc/widgets/schedule_showing.php:108
+msgid "Phone Label:"
+msgstr ""
+
+#: inc/widgets/dealer_info.php:5 inc/widgets/dealer_info.php:7
+msgid "STM Dealer Info"
+msgstr ""
+
+#. Base ID
+#: inc/widgets/socials.php:11
+msgid "Socials"
+msgstr ""
+
+#: inc/widgets/socials.php:12
+msgid ""
+"Socials widget(customize order from theme options -> Social Media section -> "
+"Social Widget subsection )"
+msgstr ""
+
+#: inc/widgets/socials.php:66
+msgid "Social Network"
+msgstr ""
+
+#: inc/widgets/recomended_for_you.php:8
+msgid "Your site&#8217;s most recomended Posts."
+msgstr ""
+
+#: inc/widgets/recomended_for_you.php:10
+msgid "STM Recomended For You"
+msgstr ""
+
+#: inc/widgets/recomended_for_you.php:41
+msgid "STM Recomended Posts"
+msgstr ""
+
+#. Base ID
+#: inc/widgets/contacts.php:11
+msgid "Contacts"
+msgstr ""
+
+#: inc/widgets/contacts.php:12
+msgid "Contacts widget"
+msgstr ""
+
+#: inc/widgets/contacts.php:92
+msgid "Address:"
+msgstr ""
+
+#: inc/widgets/contacts.php:100
+msgid "Sales Hours:"
+msgstr ""
+
+#. Name of the plugin
+#. Description of the plugin
+msgid "Motors Extends"
+msgstr ""
+
+#. URI of the plugin
+#. Author URI of the plugin
+msgid "https://stylemixthemes.com/"
+msgstr ""
+
+#. Author of the plugin
+msgid "StylemixThemes"
+msgstr ""
