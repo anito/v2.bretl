@@ -3,9 +3,9 @@ msgstr ""
 "Project-Id-Version: GDPR Compliance & Cookie Consent\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-05-25 05:17+0000\n"
-"PO-Revision-Date: 2019-05-22 09:28+0000\n"
+"PO-Revision-Date: 2019-05-22 09:29+0000\n"
 "Last-Translator: Axel <axel@a.dev>\n"
-"Language-Team: \n"
+"Language-Team: Deutsch\n"
 "Language: de_DE\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "MIME-Version: 1.0\n"
@@ -127,7 +127,7 @@ msgstr ""
 
 #: includes/Cookie.php:28
 msgid "Ok, I agree"
-msgstr ""
+msgstr "Ich stimme zu"
 
 #: includes/PluginOptions.php:190
 msgid "I agree with storage and handling of my data by this website."

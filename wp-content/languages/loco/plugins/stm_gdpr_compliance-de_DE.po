@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: GDPR Compliance & Cookie Consent\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-05-25 05:17+0000\n"
-"PO-Revision-Date: 2019-05-22 09:29+0000\n"
+"PO-Revision-Date: 2019-09-12 12:12+0000\n"
 "Last-Translator: Axel <axel@a.dev>\n"
 "Language-Team: Deutsch\n"
 "Language: de_DE\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Loco https://localise.biz/\n"
-"X-Loco-Version: 2.2.2; wp-5.2.1"
+"X-Loco-Version: 2.3.0; wp-5.2.3"
 
 #: includes/plugins/GravityForms.php:150
 #, php-format
@@ -81,11 +81,11 @@ msgstr ""
 
 #: includes/plugins/GravityForms.php:54 includes/plugins/GravityForms.php:135
 msgid "GDPR Accepted On"
-msgstr ""
+msgstr "GDPR wurde akzeptiert am:"
 
 #: includes/plugins/ContactForm7.php:130 includes/plugins/WooCommerce.php:42
 msgid "GDPR accepted on:"
-msgstr ""
+msgstr "GDPR wurde akzeptiert am:"
 
 #: includes/Plugins.php:91 includes/Plugins.php:115
 msgid ""
