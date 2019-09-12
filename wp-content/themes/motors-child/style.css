@@ -119,6 +119,7 @@
     background: #ff0000dd;
     border: 7px solid #ffffff;
     box-shadow: 1px 1px 10px rgba(0, 0, 0, .5);
+    transform: rotate(15deg) skew(153deg, 205deg);
 }
 @media (min-width: 640px) {
 
