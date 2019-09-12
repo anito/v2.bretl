@@ -93,6 +93,9 @@
 #top-bar .top-bar-wrapper {
     border-bottom: 0 none;
 }
+.lists-auto > ul {
+    width: auto;
+}
 @media (min-width: 640px) {
 
     .header-service.header-service-sticky {
