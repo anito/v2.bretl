@@ -4,7 +4,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-08-15 09:55+0000\n"
 "POT-Revision-Date: Tue Sep 27 2016 16:30:52 GMT+0500 (UZT)\n"
-"PO-Revision-Date: 2019-09-12 10:58+0000\n"
+"PO-Revision-Date: 2019-09-12 11:04+0000\n"
 "Language-Team: Deutsch\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "MIME-Version: 1.0\n"
@@ -1220,11 +1220,11 @@ msgstr "Fahrz.-Broschüre "
 
 #: inc/customizer/registration.php:948
 msgid "Car Dealer"
-msgstr "Autohändler"
+msgstr "Fahrz.-Händler"
 
 #: inc/visual_composer.php:307
 msgid "Car dealer"
-msgstr ""
+msgstr "Fahrz.-Händler"
 
 #: admin/screens/install_demo.php:10
 msgid "CAR DEALERSHIP ONE"
@@ -1319,16 +1319,16 @@ msgstr ""
 #: vc_templates/stm_car_listing_tabbed.php:221
 #: vc_templates/stm_listings_tabs_2.php:127
 msgid "cars"
-msgstr "Autos"
+msgstr "Fahrzeuge"
 
 #: inc/custom.php:3683 inc/customizer/registration.php:1378
 #: inc/customizer/registration.php:1552
 msgid "Cars for sale"
-msgstr "Autos zum Verkauf"
+msgstr "Fahrzeuge zum Verkauf"
 
 #: inc/stm_single_dealer.php:5
 msgid "Cars in stock"
-msgstr "Autos auf Lager"
+msgstr "Fahrzeuge auf Lager"
 
 #: vc_templates/stm_dealer_list.php:26
 msgid "Cars number"
@@ -1345,7 +1345,7 @@ msgstr "Warenkorb"
 
 #: woocommerce/cart/cart-totals.php:29
 msgid "Cart totals"
-msgstr "Warenkorbsummen"
+msgstr "Gesamtsumme"
 
 #: inc/visual_composer.php:2371 inc/visual_composer.php:3942
 msgid "Category tabs affix"
@@ -2990,7 +2990,7 @@ msgstr "Finanzierungsrechner"
 
 #: inc/visual_composer.php:2582
 msgid "Find a car"
-msgstr ""
+msgstr "Finde ein Fahrzeug"
 
 #: vc_templates/stm_rent_car_form.php:116
 #: partials/rental/common/order-info-empty.php:18
@@ -5677,7 +5677,7 @@ msgstr "Einen Preisangebot-Link anfordern"
 
 #: partials/modals/get-car-price.php:7
 msgid "Request car price"
-msgstr "Preis für Auto anfordern"
+msgstr "Preis für Fahrzeug anfordern"
 
 #: vc_templates/stm_sell_a_car.php:30
 #, php-format
@@ -6274,11 +6274,11 @@ msgstr "Alles anzeigen"
 
 #: vc_templates/stm_cars_on_top.php:70
 msgid "Show all premium cars"
-msgstr "Zeige alle Premium-Autos"
+msgstr "Zeige alle Premium-Fahrzeuge"
 
 #: vc_templates/stm_reduced_cars.php:67
 msgid "Show all reduced cars"
-msgstr "Zeige alle reduzierten Autos"
+msgstr "Zeige alle reduzierten Fahrzeuge"
 
 #: inc/visual_composer.php:340
 msgid "Show bottom triangle"
@@ -6296,7 +6296,7 @@ msgstr "Rechnertaste anzeigen"
 #: listings/classified/filter/sidebar.php:84
 #: listings/motorcycles/filter/sidebar.php:74
 msgid "Show cars"
-msgstr "Autos anzeigen"
+msgstr "Fahrzeuge anzeigen"
 
 #: inc/customizer/registration.php:912
 msgid "Show cart"
@@ -7823,7 +7823,7 @@ msgstr "Themes"
 
 #: partials/rental/main-shop/archive-content.php:38
 msgid "There are no cars in this office"
-msgstr "In diesem Büro gibt es keine Autos"
+msgstr "In diesem Büro gibt es keine Fahrzeuge"
 
 #: woocommerce/single-product-reviews.php:58
 msgid "There are no reviews yet."
@@ -8373,11 +8373,11 @@ msgstr "Benutzername oder E-Mail-Adresse"
 
 #: inc/value_my_car/admin-page.php:34 inc/value_my_car/value_my_car.php:21
 msgid "Value My Car"
-msgstr "Wert mein Auto"
+msgstr "Bewerte mein Fahrzeug"
 
 #: inc/visual_composer.php:2594
 msgid "Value my car"
-msgstr ""
+msgstr "Bewerte mein Fahrzeug"
 
 #: partials/rental/product/content.php:7
 msgid "Vehicle Add-ons"
@@ -8778,7 +8778,7 @@ msgstr "Sie sind nicht angemeldet."
 
 #: vc_templates/stm_add_a_car.php:157
 msgid "You are not the owner of this car."
-msgstr "Sie sind nicht der Besitzer dieser Fahrzeugs."
+msgstr "Sie sind nicht der Besitzer dieses Fahrzeugs."
 
 #: admin/includes/envato-market/inc/admin/view/partials/intro.php:15
 msgid ""
