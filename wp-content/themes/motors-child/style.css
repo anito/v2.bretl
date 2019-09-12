@@ -104,6 +104,22 @@
 .lists-auto > ul {
     width: auto;
 }
+.round-center-box {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    top: 20%;
+    display: flex !important;
+    z-index: 1;
+    overflow: hidden;
+    background: #ff0000dd;
+    border: 7px solid #ffffff;
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, .5);
+}
 @media (min-width: 640px) {
 
     .header-service.header-service-sticky {
