@@ -57,7 +57,7 @@
     max-width: 17%;
 }
 .header-service.service-transparent-header, .header-service.header-service-sticky {
-    background-color: transparent;
+    background-color: #28314033;
     position: absolute !important;
 }
 .header-service.service-transparent-header.header-service-sticky {
