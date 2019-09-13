@@ -45,22 +45,19 @@
 }
 .container {
     width: auto;
-    max-width: 1166px;
+    max-width: 1140px;
 }
 #header {
     z-index: 51;
-}
-.header-service-right {
-    float: right;
 }
 .header-service.header-service-sticky .bloglogo img {
     width: 100% !important;
 }
 .header-service .service-logo-main {
-    max-width: 19%;
+    max-width: 17%;
 }
 .header-service.service-transparent-header, .header-service.header-service-sticky {
-    background-color: #263242;
+    background-color: transparent;
     position: absolute !important;
 }
 .header-service.service-transparent-header.header-service-sticky {
