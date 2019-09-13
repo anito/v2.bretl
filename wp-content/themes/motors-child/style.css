@@ -43,6 +43,10 @@
     filter: blur(4px) brightness(99%);
     transition: filter 1s linear;
 }
+.container {
+    width: auto;
+    max-width: 1166px;
+}
 .header-service-right {
     float: right;
 }
