@@ -82,7 +82,7 @@
     bottom: 0;
     width: 100%;
     position: absolute;
-    background-image: linear-gradient(to right, rgba(255, 255, 255, 0) 20%, rgba(255, 255, 255, 1));
+    background-image: linear-gradient(to right, rgba(255, 255, 255, 0) 20%, rgba(255, 255, 255, 0.3));
 }
 
 .stm-fullwidth-with-parallax {
