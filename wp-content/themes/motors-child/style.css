@@ -59,11 +59,13 @@
 .header-service.service-transparent-header, .header-service.header-service-sticky {
     background-color: #28314033;
     position: absolute !important;
+    transition: all 0.3s linear;
 }
 .header-service.service-transparent-header.header-service-sticky {
     position: fixed !important;
     background-color: #263242ee !important;
     padding-top: 25px !important;
+    transition: all 0.3s linear;
 }
 .header-service.service-transparent-header .header-menu li a:hover {
     color: #fff !important;
@@ -163,6 +165,10 @@ ul.products li {
 .columns-4 ul.products li.product, ul.products.columns-4 li.product {
     width: 23%;
     margin-right: 2%!important;
+    margin-bottom: 2%;
+}
+.annual-bg-box {
+    background: 95% 0% no-repeat;
 }
 @media only screen and (min-width: 268px){
     ul.products>li {
