@@ -12,6 +12,7 @@
 <?php get_header('service'); ?>
 
 	<?php
+		get_template_part('partials/icon-box'); 
 		if(!is_front_page()) {
 			get_template_part('partials/title_box'); 
 		}

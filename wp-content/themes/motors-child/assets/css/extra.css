@@ -1,0 +1,16 @@
+div#icon-box {
+    position: relative;
+    z-index: 20;
+}
+
+div#icon-box::after {
+    content: "";
+    background-image: url(https://v2.bretl.webpremiere.dev/wp-content/uploads/2018/03/car-mechanic.png);
+    width: 400px;
+    height: 600px;
+    position: absolute;
+    left: 20px;
+    top: 67px;
+    background-size: contain;
+    background-repeat: no-repeat;
+}

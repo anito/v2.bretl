@@ -6,6 +6,7 @@ require_once( __DIR__ . '/includes/sender_email.php');
 
 function stm_enqueue_parent_styles() {
 	wp_enqueue_style( 'child-style', get_stylesheet_directory_uri() . '/style.css', array('stm-theme-style') );
+	wp_enqueue_style( 'child-extra', get_stylesheet_directory_uri() . '/assets/css/extra.css', array('stm-theme-style') );
 
 }
 add_action( 'wp_enqueue_scripts', 'stm_enqueue_parent_styles', 11 );
