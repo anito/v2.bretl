@@ -12,11 +12,6 @@
 <?php get_header('service'); ?>
 
 	<?php
-		$post_id = get_the_ID();
-		$show_title_box = get_post_meta( $post_id, 'title', true );
-		if($show_title_box) {
-			get_template_part('partials/icon-box');
-		}
 		if(!is_front_page()) {
 			get_template_part('partials/title_box');
 		}

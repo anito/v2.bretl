@@ -1,5 +1,12 @@
 <?php $logo_main = get_theme_mod('logo', get_template_directory_uri() . '/assets/images/tmp/logo.png'); ?>
 <?php
+	$post_id = get_the_id();
+	$show_title_box = get_post_meta( $post_id, 'title', true );
+	if( $show_title_box === 'hide' ) {
+		$has_no_title_class = "has-no-title";
+	} else {
+		$has_no_title_class = $show_title_box;
+	}
 	$fixed_header = get_theme_mod('header_sticky', true);
 	if(!empty($fixed_header) and $fixed_header) {
 		$fixed_header_class = 'header-service-fixed';
@@ -7,7 +14,7 @@
 		$fixed_header_class = '';
 	}
 	
-	$transparent_header = get_post_meta(get_the_id(), 'transparent_header', true);
+	$transparent_header = get_post_meta($post_id, 'transparent_header', true);
 	
 	if(empty($transparent_header)) {
 		$transparent_header_class = 'service-transparent-header';
@@ -17,7 +24,7 @@
 
 ?>
 
-<div class="header-service <?php echo esc_attr($fixed_header_class.' '.$transparent_header_class); ?>">
+<div class="header-service <?php echo esc_attr($fixed_header_class.' '.$transparent_header_class.' '.$has_no_title_class); ?>">
 	<div class="container">
 		<!--Logo-->
 		<div class="service-logo-main">
