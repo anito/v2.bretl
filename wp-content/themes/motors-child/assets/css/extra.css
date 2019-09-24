@@ -1,16 +1,44 @@
-div#icon-box {
+.entry-header .container {
     position: relative;
     z-index: 20;
 }
 
-div#icon-box::after {
-    content: "";
-    background-image: url(https://v2.bretl.webpremiere.dev/wp-content/uploads/2018/03/car-mechanic.png);
-    width: 400px;
-    height: 600px;
-    position: absolute;
-    left: 20px;
-    top: 67px;
-    background-size: contain;
-    background-repeat: no-repeat;
+.entry-header .entry-title {
+    text-align: center;
+}
+@media only screen and (min-width: 1025px){
+    .entry-header .container::after {
+        content: "";
+        background-image: url(https://v2.bretl.webpremiere.dev/wp-content/uploads/2018/03/car-mechanic.png);
+        width: 25vw;
+        height: 414px;
+        max-height: 600px;
+        position: absolute;
+        background-size: contain;
+        background-repeat: no-repeat;
+        left: -175px;
+        top: 42px;
+        transition: all .2s ease-in;
+    }
+}
+@media only screen and (max-width: 1400px){
+    .entry-header .container::after {
+        left: 08px;
+        top: 133px;
+        transition: all .2s ease-in;
+    }
+}
+@media only screen and (max-width: 1000px){
+    .entry-header .container::after {
+        left: 200px;
+        top: 174px;
+        transition: all .2s ease-in;
+    }
+}
+@media only screen and (max-width: 800px){
+    .entry-header .container::after {
+        left: 0px;
+        top: 100px;
+        transition: all .2s ease-in;
+    }
 }
