@@ -11,13 +11,13 @@
         content: "";
         background-image: url(https://v2.bretl.webpremiere.dev/wp-content/uploads/2018/03/car-mechanic.png);
         width: 25vw;
-        height: 414px;
+        height: 354x;
         max-height: 600px;
         position: absolute;
         background-size: contain;
         background-repeat: no-repeat;
         left: -175px;
-        top: 42px;
+        top: 115px;
         transition: all .2s ease-in;
     }
 }
