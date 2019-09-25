@@ -2,10 +2,10 @@
 <?php
 	$post_id = get_the_id();
 	$show_title_box = get_post_meta( $post_id, 'title', true );
-	if( $show_title_box === 'hide' ) {
+	if( $show_title_box === 'hide' && !is_front_page()) {
 		$has_no_title_class = "has-no-title";
 	} else {
-		$has_no_title_class = $show_title_box;
+		$has_no_title_class = '';
 	}
 	$fixed_header = get_theme_mod('header_sticky', true);
 	if(!empty($fixed_header) and $fixed_header) {
