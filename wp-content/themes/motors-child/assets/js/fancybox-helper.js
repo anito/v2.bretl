@@ -11,6 +11,13 @@
             return gal_idx++;
         }
 
+        function src_big(me) {
+            src = $(me).data('src') ? $(me).data('src') : me.src;
+            regex = /(.+)(-\d{1,}x\d{1,})(.)(jpg|jpeg|png|gif)/;
+            subst = '$1$3$4';
+            return src.replace(regex, subst);
+        }
+        
         function add_widget_galery() {
             jQuery('.widget_media_library').each(function (i) {
 
@@ -21,13 +28,6 @@
                     if (1 > $(this).find('a').length) {
 
                         var src, caption, regex, subst, inner = $(this), outer, capt;
-
-                        src_big = function (me) {
-                            src = $(me).data('src') ? $(me).data('src') : me.src;
-                            regex = /(.+)(-\d{1,}x\d{1,})(.)(jpg|jpeg|png|gif)/;
-                            subst = '$1$3$4';
-                            return src.replace(regex, subst);
-                        }
 
                         src = $(this).data('src');
                         caption = (capt = $(this).parents('[class*="slide-"]').find('.caption').length) ? capt.text() : '';
@@ -53,13 +53,6 @@
                     if (1 > $(this).find('a').length) {
         
                         var src, caption, regex, subst, inner = $(this), outer;
-        
-                        src_big = function (me) {
-                            src = $(me).data('src') ? $(me).data('src') : me.src;
-                            regex = /(.+)(-\d{1,}x\d{1,})(.)(jpg|jpeg|png|gif)/;
-                            subst = '$1$3$4';
-                            return src.replace(regex, subst);
-                        }
                         
                         src = $(this).data('src');
                         caption = $(this).parents('[class*="slide-"]').find('.caption').text();

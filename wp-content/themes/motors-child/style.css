@@ -98,6 +98,12 @@
     z-index: 0;
 }
 /*
+*  Sidebar similiar to woocommerce design except border top
+*/
+body:not(.woocommerce) .stm-shop-sidebar-area .widget {
+    border-top: 4px solid #e9aa00 !important;
+}
+/*
 *   Push columns to foreground to layer before stm-blackout-overlay
 */
 .foreground-column {
