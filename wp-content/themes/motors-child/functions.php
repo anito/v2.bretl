@@ -23,9 +23,10 @@ function stm_enqueue_parent_styles() {
 	/*
 	* Other Libraries
 	*/
-    wp_enqueue_script('fancybox', get_stylesheet_directory_uri() . '/assets/js/fancybox/jquery.fancybox.js', false, false, true);
+    wp_enqueue_script('fancybox', get_stylesheet_directory_uri() . '/vendors/fancybox/dist/jquery.fancybox.js', false, false, true);
+	wp_enqueue_style('fancybox', get_stylesheet_directory_uri() . '/vendors/fancybox/dist/jquery.fancybox.css');
+	
     wp_enqueue_script('fancybox-helper', get_stylesheet_directory_uri() . '/assets/js/fancybox-helper.js', false, false, true);
-    wp_enqueue_style('fancybox', get_stylesheet_directory_uri() . '/assets/css/fancybox/jquery.fancybox.css');
     wp_enqueue_style('fancy-metaslider', get_stylesheet_directory_uri() . '/assets/css/fancy-metaslider.css');
     wp_enqueue_style('dashicons');
 

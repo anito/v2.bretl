@@ -69,11 +69,11 @@
   
   .metaslider-flex.fancybox .ms-image {
       flex: 0 140px;
-      padding: 2px !important;
+      padding: 4px !important;
       border: 1px solid rgb(171, 171, 171)!important;
       border-radius: 2px;
       overflow: hidden;
-      box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.4);
+      box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.4);
   }
   .sidebar .metaslider-flex.fancybox .ms-image {
       flex: 1 80px;
