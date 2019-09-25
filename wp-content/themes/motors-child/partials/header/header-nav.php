@@ -58,6 +58,7 @@ if ( !empty( $fixed_header ) and $fixed_header ) {
                             <a
                                     href="<?php echo esc_url( $woocommerce_shop_page_id ); ?>"
                                     title="<?php esc_attr_e( 'Watch shop items', 'motors' ); ?>"
+                                    class="mini-cart"
                             >
                                 <span class="list-label heading-font"><?php esc_html_e( 'Cart', 'motors' ); ?></span>
                                 <i class="list-icon stm-icon-shop_bag"></i>

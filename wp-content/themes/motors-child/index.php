@@ -83,20 +83,22 @@
 					<?php echo stm_do_lmth($stm_sidebar_layout_mode['content_after']); ?>
 
 					<!--Sidebar-->
-					<?php
-						if($sidebar_id == 'default') {
-							echo stm_do_lmth($stm_sidebar_layout_mode['sidebar_before']);
-							get_sidebar();
-							echo stm_do_lmth($stm_sidebar_layout_mode['sidebar_after']);
-						} else if(!empty($sidebar_id)) {
-							echo stm_do_lmth($stm_sidebar_layout_mode['sidebar_before']);
-							echo apply_filters( 'the_content' , $blog_sidebar->post_content);
-							echo stm_do_lmth($stm_sidebar_layout_mode['sidebar_after']); ?>
-							<style type="text/css">
-								<?php echo get_post_meta( $sidebar_id, '_wpb_shortcodes_custom_css', true ); ?>
-							</style>
-					<?php }
-					?>
+					<div class="stm-shop-sidebar-area">
+						<?php
+							if($sidebar_id == 'default') {
+								echo stm_do_lmth($stm_sidebar_layout_mode['sidebar_before']);
+								get_sidebar();
+								echo stm_do_lmth($stm_sidebar_layout_mode['sidebar_after']);
+							} else if(!empty($sidebar_id)) {
+								echo stm_do_lmth($stm_sidebar_layout_mode['sidebar_before']);
+								echo apply_filters( 'the_content' , $blog_sidebar->post_content);
+								echo stm_do_lmth($stm_sidebar_layout_mode['sidebar_after']); ?>
+								<style type="text/css">
+									<?php echo get_post_meta( $sidebar_id, '_wpb_shortcodes_custom_css', true ); ?>
+								</style>
+						<?php }
+						?>
+					</div>
 				<?php else: ?>
 					<div class="col-md-12">
 						<h3 class="text-transform nothing found"><?php esc_html_e('No Results', 'motors'); ?></h3>
