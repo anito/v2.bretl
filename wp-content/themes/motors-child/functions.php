@@ -2,6 +2,7 @@
 require_once( __DIR__ . '/includes/product_category_handler.php');
 require_once( __DIR__ . '/includes/duplicate_content.php');
 require_once( __DIR__ . '/includes/sender_email.php');
+require_once( __DIR__ . '/includes/mesmerize_helper.php');
 
 
 function stm_enqueue_parent_styles() {
@@ -67,3 +68,60 @@ function before_product_object_save($product, $data_store) {
     $is_featured = $product->is_featured();
     set_product_cats($product, FEATURED_CAT_ID, $is_featured);
 }
+
+/** Google Fonts */
+function mesmerize_get_general_google_fonts()
+{
+    return array(
+        array(
+            'family'  => 'Open Sans',
+            "weights" => array("300", "400", "600", "700"),
+        ),
+        
+        array(
+            'family'  => 'Muli',
+            "weights" => array("300", "300italic", "400", "400italic", "600", "600italic", "700", "700italic", "900", "900italic"),
+        ),
+        array(
+            'family'  => 'Playfair Display',
+            "weights" => array("400", "400italic", "700", "700italic"),
+        ),
+    );
+}
+
+function mesmerize_do_enqueue_google_fonts()
+{
+    $fontsURL = array();
+    if (mesmerize_can_show_cached_value('mesmerize_google_fonts')) {
+        
+        $fontsURL = mesmerize_get_cached_value('mesmerize_google_fonts');
+    } else {
+        $gFonts = mesmerize_get_general_google_fonts();
+        
+        $fonts = array();
+        
+        foreach ($gFonts as $font) {
+            $fonts[$font['family']] = $font;
+        }
+        
+        $gFonts = apply_filters("mesmerize_google_fonts", $fonts);
+        
+        $fontQuery = array();
+        foreach ($gFonts as $family => $font) {
+            $fontQuery[] = $family . ":" . implode(',', $font['weights']);
+        }
+        
+        $query_args = array(
+            'family' => urlencode(implode('|', $fontQuery)),
+            'subset' => urlencode('latin,latin-ext'),
+        );
+        
+        $fontsURL = add_query_arg($query_args, 'https://fonts.googleapis.com/css');
+        
+        mesmerize_cache_value('mesmerize_google_fonts', $fontsURL);
+    }
+    
+    wp_enqueue_style('mesmerize-fonts', $fontsURL, array(), null);
+}
+
+add_action('wp_enqueue_scripts', 'mesmerize_do_enqueue_google_fonts');
