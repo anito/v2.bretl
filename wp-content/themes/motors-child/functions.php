@@ -124,4 +124,4 @@ function mesmerize_do_enqueue_google_fonts()
     wp_enqueue_style('mesmerize-fonts', $fontsURL, array(), null);
 }
 
-// add_action('wp_enqueue_scripts', 'mesmerize_do_enqueue_google_fonts');
+add_action('wp_enqueue_scripts', 'mesmerize_do_enqueue_google_fonts');

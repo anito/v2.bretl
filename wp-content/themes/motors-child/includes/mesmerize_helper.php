@@ -42,7 +42,7 @@ function mesmerize_can_show_cached_value($slug)
 {
     global $wp_customize;
     
-    if ($wp_customize || wp_doing_ajax() || WP_DEBUG || mesmerize_is_wporg_preview()) {
+    if ($wp_customize || wp_doing_ajax() || WP_DEBUG) {
         return false;
     }
     
