@@ -23,7 +23,7 @@ global $woocommerce;
 
 
     <a href="<?php echo wc_get_cart_url() ?>" class="button button--open-basket is--icon-right" title="<?php _e( 'View Cart', 'woocommerce' ); ?>">
-        <?php _e( 'Go to Cart', 'vendipro' ); ?>
+        <?php _e( 'View Cart', 'woocommerce' ); ?>
         <i class="fa fa-angle-right"></i>
     </a>
 
