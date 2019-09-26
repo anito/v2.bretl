@@ -294,6 +294,7 @@ ul.products li span.price {
 }
 .woocommerce .products ul li h5, .woocommerce ul.products li h5 {
     flex: 1 0;
+    font-size: 1em;
 }
 /***** Products *****/
 @media (min-width: 640px) {
