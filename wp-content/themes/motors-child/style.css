@@ -300,6 +300,13 @@ ul.products li span.price {
     max-width: 40vw;
     margin: 0 auto;
 }
+.entry-title h2 {
+    max-width: 40vw;
+    margin: 0 auto;
+    font-family: 'Playfair Display', sans-serif;
+    font-style: italic;
+    font-weight: 700;
+}
 /***** PWB Brand *****/
 body[class*=pwb-brand] .term-description blockquote {
     font-family: 'Playfair Display', sans-serif;
