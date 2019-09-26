@@ -16,14 +16,14 @@ global $woocommerce;
 <div class="button--container">
 
 
-    <a href="<?php echo wc_get_checkout_url() ?>" class="button button--checkout is--icon-right" title="<?php __( 'Proceed to checkout', 'woocommerce' ); ?>">
-        <?php __( 'Proceed to checkout', 'woocommerce' ); ?>
+    <a href="<?php echo wc_get_checkout_url() ?>" class="button button--checkout is--icon-right" title="<?php _e( 'Proceed to checkout', 'woocommerce' ); ?>">
+        <?php _e( 'Proceed to checkout', 'woocommerce' ); ?>
         <i class="fa fa-angle-right"></i>
     </a>
 
 
-    <a href="<?php echo wc_get_cart_url() ?>" class="button button--open-basket is--icon-right" title="<?php __( 'View cart', 'woocommerce' ); ?>">
-        <?php __( 'View cart', 'woocommerce' ); ?>
+    <a href="<?php echo wc_get_cart_url() ?>" class="button button--open-basket is--icon-right" title="<?php _e( 'View cart', 'woocommerce' ); ?>">
+        <?php _e( 'View cart', 'woocommerce' ); ?>
         <i class="fa fa-angle-right"></i>
     </a>
 
