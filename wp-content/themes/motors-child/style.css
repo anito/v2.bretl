@@ -187,8 +187,8 @@ a[target="_blank"] > *:after {
     z-index: 10;
     position: relative;
 }
-.entry-header > .container {
-    min-height: 435px !important;
+.entry-header > .container, .stm-blog-fullwidth-info {
+    height: 435px !important;
 }
 .entry-header .entry-title {
     top: 60%;
@@ -300,7 +300,7 @@ ul.products li span.price {
     max-width: 40vw;
     margin: 0 auto;
 }
-.entry-title h2 {
+.entry-title h2, .stm-blog-fullwidth-info .title {
     max-width: 40vw;
     margin: 0 auto;
     font-family: 'Playfair Display', sans-serif;
