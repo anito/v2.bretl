@@ -109,6 +109,78 @@ body:not(.woocommerce) .stm-shop-sidebar-area .widget {
     box-shadow: none !important;
 }
 /*
+*   Document Icon
+*
+*/
+.pwb-brands-col3, .page .document-icon {
+    border-radius: 3px;
+    background-image: linear-gradient(to right, #f8f9fa -80%, #ccc 188%);
+    margin: 5px !important;
+    padding: 40px 0 !important;
+    border: 1px solid #fff;
+    position: relative;
+    flex: 0 0 160px;
+    box-shadow: 0px 0px 1px;
+    transform: rotate(0deg);
+    transition: all 0.2s ease-in;
+}
+.document-gallery .document-icon .title {
+    margin-top: 10px;
+    display: block;
+    font-style: initial;
+}
+.pwb-brands-cols-outer,
+.document-icon-row {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
+.pwb-brands-col3,
+.page .document-icon {
+    border-radius: 3px;
+    background-image: linear-gradient(to right, #f8f9fa -80%, #ccc 188%);
+    margin: 5px !important;
+    padding: 40px 0 !important;
+    border: 1px solid #fff;
+    position: relative;
+    flex: 0 0 160px;
+    box-shadow: 0px 0px 1px;
+    transform: rotate(0deg);
+    transition: all 0.2s ease-in;
+}
+.pwb-brands-col3 {
+    padding: 13px !important;
+}
+#tab-description .document-gallery .document-icon {
+    position: relative;
+    overflow: visible;
+    flex: 0 1 150px;
+    padding: 0;
+    margin: 15x;
+}
+#tab-description .document-gallery .document-icon a {
+    text-decoration: none;
+}
+#tab-description .document-gallery .document-icon img {
+    width: 140px;
+}
+.document-icon.new-window .title:after,
+a.new-window:after,
+a[target="_blank"] + .wp-caption-text:after,
+a[target="_blank"] > *:after {
+    content: '\f504';
+    display: inline-block;
+    -webkit-font-smoothing: antialiased;
+    font-family: 'dashicons';
+    font-size: 1rem;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: normal;
+    line-height: 1em;
+    padding-left: 5px;
+}
+/*
 *   Push columns to foreground to layer before stm-blackout-overlay
 */
 .foreground-column {
