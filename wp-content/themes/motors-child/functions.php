@@ -39,3 +39,31 @@ function child_theme_slug_setup() {
     
 }
 add_action( 'after_setup_theme', 'child_theme_slug_setup' );
+
+/** Handle Sales Category */
+add_action("save_post", "on_save_post", 99, 3);
+
+function on_save_post($post_id, $post, $is_update) {
+    global $woocommerce;
+
+    $product_id = $post_id;
+    $product = wc_get_product($product_id);
+
+    if (!$product)
+        return 0;
+
+    if ($product->is_type('variation')) {
+        $variation = new WC_Product_Variation($product);
+        $product_id = $variation->get_parent_id();
+        $product = wc_get_product($product_id);
+    }
+    fix_cat($product_id, SALES_CAT_ID);
+}
+
+/** Handle Featured Products */
+add_action("woocommerce_before_product_object_save", "before_product_object_save", 99, 2);
+
+function before_product_object_save($product, $data_store) {
+    $is_featured = $product->is_featured();
+    set_product_cats($product, FEATURED_CAT_ID, $is_featured);
+}
