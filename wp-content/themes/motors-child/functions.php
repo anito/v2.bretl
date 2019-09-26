@@ -131,7 +131,6 @@ add_action('wp_enqueue_scripts', 'mesmerize_do_enqueue_google_fonts');
  */
 function filter_post_classes( $classes ) {
 	$classes[] = 'page-template-' . LAYOUT_TEMPLATE;
-	write_log($classes);
 	return $classes;
 }
 
