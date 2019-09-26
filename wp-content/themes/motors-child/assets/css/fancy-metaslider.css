@@ -99,7 +99,9 @@
         padding: 0px !important;
         border: 0 none !important;
     }
-
+    .fancybox .caption-wrap {
+        display: none;
+    }
     .single-entry .metaslider-flex.fancybox .ms-image {
         width: 24.23% !important;
     }
