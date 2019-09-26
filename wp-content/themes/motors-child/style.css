@@ -104,7 +104,7 @@ body:not(.woocommerce) .stm-shop-sidebar-area .widget {
     border-top: 4px solid #e9aa00 !important;
 }
 /* optionally remove some of the styles  */
-.stm-shop-sidebar-area .simple-widget-style.widget {
+.stm-shop-sidebar-area .simple-widget-style .widget {
     padding: 0 !important;
     box-shadow: none !important;
 }
