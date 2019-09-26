@@ -301,8 +301,9 @@ ul.products li span.price {
     margin: 0 auto;
 }
 .entry-title h2, .stm-blog-fullwidth-info .title {
-    max-width: 40vw;
+    max-width: 40vw !important;
     margin: 0 auto;
+    text-align: center;
     font-family: 'Playfair Display', sans-serif;
     font-style: italic;
     font-weight: 700;
