@@ -139,13 +139,13 @@ body:not(.woocommerce) .stm-shop-sidebar-area .widget {
 .pwb-brands-col3,
 .page .document-icon {
     border-radius: 3px;
-    background-image: linear-gradient(to right, #f8f9fa -80%, #ccc 188%);
+    background-image: linear-gradient(to right, #ffffff -80%, #f5f5f5 188%);
     margin: 5px !important;
     padding: 40px 0 !important;
     border: 1px solid #fff;
     position: relative;
     flex: 0 0 160px;
-    box-shadow: 0px 0px 1px;
+    box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.5);
     transform: rotate(0deg);
     transition: all 0.2s ease-in;
 }
