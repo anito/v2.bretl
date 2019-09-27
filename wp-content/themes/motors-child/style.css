@@ -17,7 +17,7 @@
 
 .theme-colors {
     --color: #e9aa00;
-    --body-bg: #ececec;
+    --body-bg: #f7f7f7;
 }
 body {
     background-color: var(--body-bg);
