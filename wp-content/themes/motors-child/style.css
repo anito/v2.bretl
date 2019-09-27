@@ -106,6 +106,9 @@ body {
 /*
 *  Sidebar similiar to woocommerce design except border top
 */
+.widget {
+    background-color: white;
+}
 body:not(.woocommerce) .stm-shop-sidebar-area .widget {
     border-top: 4px solid var(--color) !important;
 }
