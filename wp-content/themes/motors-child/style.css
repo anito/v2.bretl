@@ -267,6 +267,7 @@ a[target="_blank"] > *:after {
     box-shadow: 0 0 3px rgba(0, 0, 0, .5);
     margin-right: 0;
     margin-bottom: 3%;
+    max-width: 49%;
 }
 .woocommerce  ul.products li:nth-child(2n-1) {
     margin-right: 3%;
@@ -274,9 +275,13 @@ a[target="_blank"] > *:after {
 .woocommerce div.product .woocommerce-tabs .panel {
     padding: 0px 33px 33px;
 }
-.woocommerce-tabs.wc-tabs-wrapper {
+.woocommerce-tabs.wc-tabs-wrapper,
+.summary.entry-summary {
     background: white;
     box-shadow: 0px 0px 3px rgba(0, 0, 0, .3);
+}
+.summary.entry-summary {
+    padding: 10px;
 }
 .annual-bg-box {
     background: 95% 0% no-repeat;
@@ -344,6 +349,10 @@ body[class*=pwb-brand] .term-description blockquote {
     font-style: italic;
     font-size: 2em;
     font-weight: 700;
+}
+.pwb-single-product-brands {
+    width: 50%;
+    margin: 0 auto;
 }
 [class*="pwb-brands-"] small {
     background-color: var(--color);
