@@ -354,6 +354,12 @@ body[class*=pwb-brand] .term-description blockquote {
         position: fixed !important;
     }
 }
+@media (max-width: 767px) {
+    .stm-blog-fullwidth-info .absoluted-content {
+        position: absolute;
+        background: transparent;
+    }
+}
 @media (min-width: 992px) {
 
     .header-service .header-menu {
