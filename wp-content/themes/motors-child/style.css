@@ -197,6 +197,9 @@ a[target="_blank"] > *:after {
 .entry-header > .container, .stm-blog-fullwidth-info {
     height: 435px !important;
 }
+.entry-header::after {
+    background-color: rgba(35, 38, 40, 0.7);
+}
 .stm-blog-fullwidth-info .post-thumbnail img {
     max-width: 100000px;
     height: 100%;
@@ -252,24 +255,30 @@ a[target="_blank"] > *:after {
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
-}
-ul.products li {
     display: inline-block;
-    margin: 0 2% 2% 0;
     text-align: center;
     position: relative;
     z-index: auto;
     vertical-align: bottom;
     cursor: pointer;
-    width: 18%;
-    border: 2px solid #f3f3f3;
+    width: 46%;
+    border: 1px solid #ced0d5;
     padding-bottom: .5em;
-    padding-top: 12px;
+    padding: 3px;
+    flex: 1 1 46%;
+    box-shadow: 0 0 3px rgba(0, 0, 0, .5);
+    margin-right: 0;
+    margin-bottom: 3%;
+}
+.woocommerce  ul.products li:nth-child(2n+1) {
+    margin-right: 4%;
+}
+.columns-4 ul.products li.product::nth-child(4n+1), ul.products.columns-4 li.product::nth-child(4n+1) {
+    margin-right: 4%;
 }
 .columns-4 ul.products li.product, ul.products.columns-4 li.product {
     width: 23%;
-    margin-right: 2%!important;
-    margin-bottom: 2%;
+    flex: 1 1 23%;
 }
 .annual-bg-box {
     background: 95% 0% no-repeat;
