@@ -200,7 +200,7 @@ a[target="_blank"] > *:after {
 .stm-blog-fullwidth-info .post-thumbnail img {
     max-width: 100000px;
     height: 100%;
-    margin: 0 auto;
+    width: auto;
     position: absolute;
     top: 0;
     right: 0;
