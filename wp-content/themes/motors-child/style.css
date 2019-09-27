@@ -267,7 +267,6 @@ a[target="_blank"] > *:after {
     box-shadow: 0 0 3px rgba(0, 0, 0, .5);
     margin-right: 0;
     margin-bottom: 3%;
-    max-width: 23%;
 }
 .woocommerce  ul.products li:nth-child(2n-1) {
     margin-right: 3%;
