@@ -283,6 +283,11 @@ a[target="_blank"] > *:after {
 .summary.entry-summary {
     padding: 10px;
 }
+.single-product .product_title {
+    width: 100%;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
 .annual-bg-box {
     background: 95% 0% no-repeat;
 }
