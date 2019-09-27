@@ -197,6 +197,14 @@ a[target="_blank"] > *:after {
 .entry-header > .container, .stm-blog-fullwidth-info {
     height: 435px !important;
 }
+.stm-blog-fullwidth-info .post-thumbnail img {
+    max-width: 100000px;
+    height: 100%;
+    margin: 0 auto;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
 .entry-header .entry-title {
     top: 60%;
     transform: translateY(-60%);
@@ -355,6 +363,10 @@ body[class*=pwb-brand] .term-description blockquote {
     }
     .header-service .service-logo-main {
         max-width: 17%;
+    }
+    .stm-blog-fullwidth-info .post-thumbnail img {
+        width: 100%;
+        height: auto;
     }
 }
 @media (max-width: 767px) {
