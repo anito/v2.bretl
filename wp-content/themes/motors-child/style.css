@@ -310,16 +310,17 @@ ul.products li span.price {
     font-size: 1em;
 }
 .entry-title {
-    max-width: 40vw;
+    width: 80vw;
     margin: 0 auto;
 }
 .entry-title h2, .stm-blog-fullwidth-info .title {
-    max-width: 40vw !important;
     margin: 0 auto;
     text-align: center;
     font-family: 'Playfair Display', sans-serif;
     font-style: italic;
     font-weight: 700;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 /***** PWB Brand *****/
 body[class*=pwb-brand] .term-description blockquote {
@@ -357,5 +358,10 @@ body[class*=pwb-brand] .term-description blockquote {
 
     .header-service .header-menu {
         margin-right: 20px;
+    }
+}
+@media (min-width: 1024px) {
+    .entry-title {
+        width: 55vw;
     }
 }
