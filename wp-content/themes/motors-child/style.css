@@ -282,6 +282,9 @@ a[target="_blank"] > *:after {
 .woocommerce  ul.products li:nth-child(2n-1) {
     margin-right: 3%;
 }
+.woocommerce div.product .woocommerce-tabs .panel {
+    padding: 0px 33px;
+}
 .annual-bg-box {
     background: 95% 0% no-repeat;
 }
@@ -371,7 +374,6 @@ body[class*=pwb-brand] .term-description blockquote {
 @media (min-width: 640px) {
     .woocommerce ul.products li.product {
         margin-right: 2%;
-        max-width: 23%;
     }
     .woocommerce .columns-4 ul.products li.product:nth-child(4n+1), ul.products.columns-4 li.product:nth-child(4n) {
         margin-right: 0;
