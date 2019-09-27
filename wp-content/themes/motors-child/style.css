@@ -335,6 +335,9 @@ ul.products li span.price {
     flex: 1 0;
     font-size: 1em;
 }
+.added_to_cart {
+    display: none !important;
+}
 .entry-title {
     width: 80vw;
     margin: 0 auto;
