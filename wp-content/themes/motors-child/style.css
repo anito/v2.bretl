@@ -17,6 +17,10 @@
 
 .theme-colors {
     --color: #e9aa00;
+    --body-bg: #ececec;
+}
+body {
+    background-color: var(--body-bg);
 }
 .blurred {
     content: "";
@@ -250,35 +254,28 @@ a[target="_blank"] > *:after {
 .woocommerce ul.products {
     display: flex;
     flex-wrap: wrap;
+    margin: 0;
 }
 .woocommerce ul.products li.product {
     display: flex;
     flex-wrap: wrap;
-    flex-direction: column;
-    display: inline-block;
     text-align: center;
     position: relative;
     z-index: auto;
     vertical-align: bottom;
     cursor: pointer;
     width: 46%;
-    border: 1px solid #ced0d5;
+    border: 0 none;
     padding-bottom: .5em;
     padding: 3px;
     flex: 1 1 46%;
+    background-color: white;
     box-shadow: 0 0 3px rgba(0, 0, 0, .5);
     margin-right: 0;
     margin-bottom: 3%;
 }
-.woocommerce  ul.products li:nth-child(2n+1) {
-    margin-right: 4%;
-}
-.columns-4 ul.products li.product::nth-child(4n+1), ul.products.columns-4 li.product::nth-child(4n+1) {
-    margin-right: 4%;
-}
-.columns-4 ul.products li.product, ul.products.columns-4 li.product {
-    width: 23%;
-    flex: 1 1 23%;
+.woocommerce  ul.products li:nth-child(2n-1) {
+    margin-right: 3%;
 }
 .annual-bg-box {
     background: 95% 0% no-repeat;
@@ -296,6 +293,7 @@ a[target="_blank"] > *:after {
 }
 .woocommerce .products ul li .stm-product-inner, .woocommerce ul.products li .stm-product-inner {
     margin-bottom: 0;
+    padding-bottom: 2px;
     border-bottom: 0 none;
 }
 .woocommerce ul.products li.product h5+.product_info {
@@ -366,6 +364,17 @@ body[class*=pwb-brand] .term-description blockquote {
 }
 /***** Products *****/
 @media (min-width: 640px) {
+    .woocommerce ul.products li.product {
+        margin-right: 2%;
+    }
+    .woocommerce .columns-4 ul.products li.product:nth-child(4n+1), ul.products.columns-4 li.product:nth-child(4n) {
+        margin-right: 0;
+    }
+    .woocommerce .columns-4 ul.products li.product, ul.products.columns-4 li.product {
+        width: 23%;
+        flex: 1 1 23%;
+    }
+
 
     .header-service.header-service-sticky {
         position: fixed !important;
