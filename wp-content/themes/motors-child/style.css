@@ -56,7 +56,7 @@
     width: 100% !important;
 }
 .header-service .service-logo-main {
-    max-width: 17%;
+    max-width: 40%;
 }
 .header-service.service-transparent-header, .header-service.header-service-sticky {
     background-color: #28314033;
@@ -352,6 +352,9 @@ body[class*=pwb-brand] .term-description blockquote {
 
     .header-service.header-service-sticky {
         position: fixed !important;
+    }
+    .header-service .service-logo-main {
+        max-width: 17%;
     }
 }
 @media (max-width: 767px) {
