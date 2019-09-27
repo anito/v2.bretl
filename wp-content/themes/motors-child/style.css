@@ -371,6 +371,7 @@ body[class*=pwb-brand] .term-description blockquote {
 @media (min-width: 640px) {
     .woocommerce ul.products li.product {
         margin-right: 2%;
+        max-width: 23%;
     }
     .woocommerce .columns-4 ul.products li.product:nth-child(4n+1), ul.products.columns-4 li.product:nth-child(4n) {
         margin-right: 0;
