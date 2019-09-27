@@ -278,12 +278,16 @@ a[target="_blank"] > *:after {
     box-shadow: 0 0 3px rgba(0, 0, 0, .5);
     margin-right: 0;
     margin-bottom: 3%;
+    max-width: 23%;
 }
 .woocommerce  ul.products li:nth-child(2n-1) {
     margin-right: 3%;
 }
 .woocommerce div.product .woocommerce-tabs .panel {
-    padding: 0px 33px;
+    padding: 0px 33px 33px;
+}
+.woocommerce-tabs.wc-tabs-wrapper {
+    background: white;
 }
 .annual-bg-box {
     background: 95% 0% no-repeat;
@@ -381,6 +385,7 @@ body[class*=pwb-brand] .term-description blockquote {
     .woocommerce .columns-4 ul.products li.product, ul.products.columns-4 li.product {
         width: 23%;
         flex: 1 1 23%;
+        max-width: 23%;
     }
 
 
