@@ -407,7 +407,7 @@
     add_mini_cart();
     // add_image_disclaimer();
     add_jQuery_blocking();
-    add_open_links_in_new_window_icon();
+    add_open_links_in_new_window_icon(['top-bar']);
     // add_boxify();
     // add_gsap_1();
     // add_gsap_2();
