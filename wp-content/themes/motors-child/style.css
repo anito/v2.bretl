@@ -76,7 +76,7 @@ body {
 .header-service.service-transparent-header .header-menu li a:hover {
     color: #fff !important;
 }
-.header-nav-holder {
+.stm-layout-header-car_dealer #header #header-nav-holder.header-nav-holder {
     position: absolute;
     bottom: -52px;
     height: 52px;
