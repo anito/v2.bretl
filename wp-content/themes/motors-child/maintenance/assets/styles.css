@@ -76,15 +76,16 @@ body:after {
   background: rgba(0, 0, 0, 0.7);
   z-index: -1;
 }
-h1,
-h2 {
-  margin: 16px 0;
+.wrap h1 {
+  margin: 0 0 90px;
+  font-size: 1.4em;
+  font-weight: 300;
 }
-h1 {
-  font-size: 24px;
-}
-h2 {
-  color: rgba(255, 255, 255, 0.5);
+.wrap h2 {
+  margin: 0 0 80px;
+  font-size: 1em;
+  font-weight: 300;
+  line-height: 1.6em;
 }
 .container {
   display: -webkit-box;
