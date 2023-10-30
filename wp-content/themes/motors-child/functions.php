@@ -57,7 +57,7 @@ function wbp_admin_styles($hook)
     if (is_callable('write_log')) {
         write_log($screen);
     }
-    if($screen_id === 'listings') {
+    if($screen_id != 'listings') {
         wp_dequeue_style('stm_listings_listing_css');
     }
     wp_register_style('wbp_admin_styles', get_stylesheet_directory_uri() . '/style-admin.css', array(), CHILD_THEME_VERSION);
