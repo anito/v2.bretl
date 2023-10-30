@@ -4,6 +4,17 @@ require_once( __DIR__ . '/includes/duplicate_content.php');
 require_once( __DIR__ . '/includes/sender_email.php');
 require_once( __DIR__ . '/includes/mesmerize_helper.php');
 
+function wbp_init()
+{
+    if (!wp_doing_ajax()) {
+        $theme = wp_get_theme();
+        /**
+         * Define Constants
+         */
+        define('CHILD_THEME_VERSION', $theme->__get('version'));
+    }
+}
+add_filter('init', 'wbp_init');
 
 function stm_enqueue_parent_styles() {
 	wp_enqueue_style( 'child-style', get_stylesheet_directory_uri() . '/style.css', array('stm-theme-style') );
@@ -33,6 +44,20 @@ function stm_enqueue_parent_styles() {
 
 }
 add_action( 'wp_enqueue_scripts', 'stm_enqueue_parent_styles', 11 );
+
+/**
+ * Admin Styles for Screens
+ */
+function wbp_admin_styles($hook)
+{
+    $screen    = get_current_screen();
+    $screen_id = $screen ? $screen->id : '';
+    if (in_array($screen_id, wc_get_screen_ids())) {
+    }
+    wp_register_style('wbp_admin_styles', get_stylesheet_directory_uri() . '/style-admin.css', array(), CHILD_THEME_VERSION);
+    wp_enqueue_style('wbp_admin_styles');
+}
+add_action('admin_enqueue_scripts', 'wbp_admin_styles');
 
 function child_theme_slug_setup() {
     
