@@ -187,7 +187,8 @@ body:not(.woocommerce) .stm-shop-sidebar-area .widget {
     top: 60%;
     transform: translateY(-60%);
 }
-.hide-bookly-category .bookly-form [data-type=category] {
+.hide-bookly-fields .bookly-form [data-type=category],
+.hide-bookly-fields .bookly-form [data-type=staff] {
   display: none;
 }
 #top-bar .top-bar-wrapper {
