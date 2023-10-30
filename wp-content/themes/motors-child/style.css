@@ -187,8 +187,8 @@ body:not(.woocommerce) .stm-shop-sidebar-area .widget {
     top: 60%;
     transform: translateY(-60%);
 }
-.bookly-service-step .bookly-box > .bookly-form-group:nth-child(3) {
-    display: none !important;
+.bookly-form[data-type=category] {
+  display: none;
 }
 #top-bar .top-bar-wrapper {
     border-bottom: 0 none;
